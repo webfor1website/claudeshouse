@@ -884,6 +884,36 @@ section {
     color: var(--accent);
 }
 
+/* Thank You */
+.thank-you {
+    background-color: var(--white);
+    padding: 8rem 0;
+    text-align: center;
+}
+
+.thank-you h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.thank-you-text {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thank-you-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .nav-container {

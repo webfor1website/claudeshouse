@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Claude's House</title>
+    <meta name="description" content="Thank you for reaching out to Claude's House. We'll be in touch soon.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Claude's House</a>
+            <div class="nav-links">
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="gethelp.html">Get Help</a>
+                <a href="donate.html">Donate</a>
+                <a href="financials.html">Financials</a>
+                <a href="volunteer.html">Volunteer</a>
+                <a href="blog.html">Updates</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="thank-you">
+        <div class="container">
+            <h1>We got your message.</h1>
+            <p class="thank-you-text">If you left a phone number or email we'll be in touch within 24 hours with resources near you.</p>
+            <p class="thank-you-text">In the meantime, call or text 211 for immediate help. Free. Confidential. 24 hours.</p>
+            <div class="thank-you-buttons">
+                <a href="https://www.211arizona.org" target="_blank" class="btn btn-primary">Find Resources Now →</a>
+                <a href="index.html" class="btn btn-secondary">Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Claude's House &mdash; Phoenix, AZ</p>
+            <p>Founded by Claude A. Thompson</p>
+            <div class="footer-links">
+                <a href="contact.html">Contact Us</a>
+                <a href="#">EIN: [PENDING]</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
