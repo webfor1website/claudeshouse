@@ -20,6 +20,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
+    padding-top: 100px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -35,8 +36,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* 988 Crisis Banner */
 .crisis-banner {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     background-color: #C9A96E;
     color: white;
     text-align: center;
@@ -59,7 +62,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Navigation */
 .nav {
     position: fixed;
-    top: 0;
+    top: 45px;
     left: 0;
     right: 0;
     background-color: transparent;
@@ -91,16 +94,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .nav-links a {
     font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 400;
     color: var(--text-color);
     text-decoration: none;
     transition: color 0.3s ease;
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -119,6 +125,49 @@ h1, h2, h3, h4, h5, h6 {
 .nav-cta:hover {
     background-color: #B8985E;
     color: white !important;
+}
+
+/* Mobile Navigation */
+@media (max-width: 1024px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .nav-links {
+        gap: 0.75rem;
+        justify-content: center;
+    }
+    
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+    
+    .nav-cta {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .nav-links a {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+    
+    .nav-cta {
+        grid-column: span 2;
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
 }
 
 /* Crisis Buttons Section */
