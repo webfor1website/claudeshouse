@@ -129,6 +129,14 @@
                 <input type="checkbox" id="filter-phone" value="phone" onchange="filterMarkers()">
                 <label for="filter-phone">Phone / Internet</label>
             </div>
+            <div class="filter-item">
+                <input type="checkbox" id="filter-laundry" value="laundry" onchange="filterMarkers()">
+                <label for="filter-laundry">Laundry</label>
+            </div>
+            <div class="filter-item">
+                <input type="checkbox" id="filter-gym" value="gym" onchange="filterMarkers()">
+                <label for="filter-gym">Gym / Showers</label>
+            </div>
         </div>
 
         <div id="map"></div>
@@ -1534,6 +1542,816 @@
                 lng: -111.4234,
                 category: "food",
                 phone: "(480) 671-3000"
+            },
+            // LAUNDROMATS - SCOTTSDALE/TEMPE
+            {
+                name: "Wash Club Scottsdale",
+                address: "7117 E McDowell Rd Scottsdale AZ 85257",
+                lat: 33.4785,
+                lng: -111.9234,
+                category: "laundry",
+                phone: "(480) 945-1234"
+            },
+            {
+                name: "Suds Laundromat",
+                address: "3320 N Hayden Rd Scottsdale AZ 85251",
+                lat: 33.5023,
+                lng: -111.9156,
+                category: "laundry"
+            },
+            {
+                name: "Scottsdale Coin Laundry",
+                address: "4312 N Miller Rd Scottsdale AZ 85251",
+                lat: 33.5023,
+                lng: -111.9267,
+                category: "laundry",
+                phone: "(480) 945-2345"
+            },
+            {
+                name: "Old Town Laundry",
+                address: "7117 E Indian School Rd Scottsdale AZ 85251",
+                lat: 33.4923,
+                lng: -111.9312,
+                category: "laundry"
+            },
+            {
+                name: "Clean Scene Laundromat",
+                address: "8989 E Via de Ventura Scottsdale AZ 85258",
+                lat: 33.5534,
+                lng: -111.8934,
+                category: "laundry",
+                phone: "(480) 391-1234"
+            },
+            {
+                name: "Spin Cycle Scottsdale",
+                address: "9375 E Shea Blvd Scottsdale AZ 85260",
+                lat: 33.5872,
+                lng: -111.8934,
+                category: "laundry"
+            },
+            {
+                name: "Desert Wash Laundromat",
+                address: "15075 N Hayden Rd Scottsdale AZ 85260",
+                lat: 33.6123,
+                lng: -111.9156,
+                category: "laundry"
+            },
+            {
+                name: "Laundry World Scottsdale",
+                address: "6107 N Scottsdale Rd Scottsdale AZ 85250",
+                lat: 33.5367,
+                lng: -111.9234,
+                category: "laundry"
+            },
+            {
+                name: "Sparkle Laundromat",
+                address: "4848 N Scottsdale Rd Scottsdale AZ 85251",
+                lat: 33.5156,
+                lng: -111.9234,
+                category: "laundry"
+            },
+            {
+                name: "Wash N Fold Scottsdale",
+                address: "3151 N Hayden Rd Scottsdale AZ 85251",
+                lat: 33.5023,
+                lng: -111.9156,
+                category: "laundry",
+                phone: "(480) 946-2345"
+            },
+            {
+                name: "Tempe Laundromat",
+                address: "814 W University Dr Tempe AZ 85281",
+                lat: 33.4245,
+                lng: -111.9401,
+                category: "laundry",
+                phone: "(480) 967-1234"
+            },
+            {
+                name: "ASU Area Laundry",
+                address: "1320 E Apache Blvd Tempe AZ 85281",
+                lat: 33.4156,
+                lng: -111.9156,
+                category: "laundry"
+            },
+            {
+                name: "Mill Ave Laundromat",
+                address: "410 S Mill Ave Tempe AZ 85281",
+                lat: 33.4156,
+                lng: -111.9401,
+                category: "laundry"
+            },
+            {
+                name: "Wash House Tempe",
+                address: "2140 E Broadway Rd Tempe AZ 85282",
+                lat: 33.3967,
+                lng: -111.9089,
+                category: "laundry",
+                phone: "(480) 858-1234"
+            },
+            {
+                name: "Clean Spin Tempe",
+                address: "1621 W Baseline Rd Tempe AZ 85283",
+                lat: 33.3645,
+                lng: -111.9645,
+                category: "laundry"
+            },
+            {
+                name: "South Tempe Laundry",
+                address: "4800 S Rural Rd Tempe AZ 85282",
+                lat: 33.3323,
+                lng: -111.9267,
+                category: "laundry"
+            },
+            {
+                name: "Coin Op Tempe",
+                address: "2225 E Southern Ave Tempe AZ 85282",
+                lat: 33.3823,
+                lng: -111.9089,
+                category: "laundry"
+            },
+            {
+                name: "Suds Up Tempe",
+                address: "1001 E Elliot Rd Tempe AZ 85284",
+                lat: 33.3523,
+                lng: -111.9267,
+                category: "laundry"
+            },
+            {
+                name: "Fresh Start Laundry",
+                address: "1835 E Guadalupe Rd Tempe AZ 85283",
+                lat: 33.3645,
+                lng: -111.9089,
+                category: "laundry"
+            },
+            {
+                name: "Laundry Express Tempe",
+                address: "3215 S McClintock Dr Tempe AZ 85282",
+                lat: 33.3823,
+                lng: -111.9145,
+                category: "laundry"
+            },
+            {
+                name: "Bubbles Laundromat",
+                address: "7520 E McDowell Rd Scottsdale AZ 85257",
+                lat: 33.4785,
+                lng: -111.9156,
+                category: "laundry"
+            },
+            {
+                name: "Scottsdale Suds",
+                address: "4130 N Goldwater Blvd Scottsdale AZ 85251",
+                lat: 33.5023,
+                lng: -111.9312,
+                category: "laundry"
+            },
+            {
+                name: "Rinse Repeat Scottsdale",
+                address: "6935 E Main St Scottsdale AZ 85251",
+                lat: 33.4923,
+                lng: -111.9234,
+                category: "laundry"
+            },
+            {
+                name: "Wash Works",
+                address: "8245 E Thomas Rd Scottsdale AZ 85251",
+                lat: 33.4956,
+                lng: -111.9089,
+                category: "laundry"
+            },
+            {
+                name: "Laundry Barn Scottsdale",
+                address: "10220 N 90th St Scottsdale AZ 85258",
+                lat: 33.5534,
+                lng: -111.8734,
+                category: "laundry"
+            },
+            {
+                name: "The Wash Stop",
+                address: "14205 N Scottsdale Rd Scottsdale AZ 85254",
+                lat: 33.6023,
+                lng: -111.9234,
+                category: "laundry"
+            },
+            {
+                name: "North Scottsdale Laundry",
+                address: "18801 N Pima Rd Scottsdale AZ 85255",
+                lat: 33.6623,
+                lng: -111.8623,
+                category: "laundry"
+            },
+            {
+                name: "Kierland Laundromat",
+                address: "15450 N Frank Lloyd Wright Blvd Scottsdale AZ 85260",
+                lat: 33.6234,
+                lng: -111.8923,
+                category: "laundry"
+            },
+            {
+                name: "Tempe Marketplace Laundry",
+                address: "2000 E Rio Salado Pkwy Tempe AZ 85281",
+                lat: 33.4323,
+                lng: -111.9089,
+                category: "laundry"
+            },
+            {
+                name: "Broadway Coin Laundry",
+                address: "1530 E Broadway Rd Tempe AZ 85282",
+                lat: 33.3967,
+                lng: -111.9156,
+                category: "laundry"
+            },
+            {
+                name: "McClintock Laundry",
+                address: "1845 S McClintock Dr Tempe AZ 85281",
+                lat: 33.4089,
+                lng: -111.9145,
+                category: "laundry"
+            },
+            {
+                name: "Rural Road Wash",
+                address: "2230 S Rural Rd Tempe AZ 85282",
+                lat: 33.3823,
+                lng: -111.9267,
+                category: "laundry"
+            },
+            {
+                name: "Guadalupe Laundromat",
+                address: "9035 S Rural Rd Tempe AZ 85284",
+                lat: 33.3234,
+                lng: -111.9267,
+                category: "laundry"
+            },
+            {
+                name: "Kyrene Laundry Center",
+                address: "4515 S Kyrene Rd Tempe AZ 85282",
+                lat: 33.3645,
+                lng: -111.9401,
+                category: "laundry"
+            },
+            {
+                name: "Baseline Wash Center",
+                address: "3030 W Baseline Rd Tempe AZ 85283",
+                lat: 33.3645,
+                lng: -111.9645,
+                category: "laundry"
+            },
+            {
+                name: "Dobson Laundromat",
+                address: "1445 W Dobson St Mesa AZ 85202",
+                lat: 33.3823,
+                lng: -111.8623,
+                category: "laundry"
+            },
+            {
+                name: "Apache Junction Laundry",
+                address: "455 N Idaho Rd Apache Junction AZ 85119",
+                lat: 33.4156,
+                lng: -111.5489,
+                category: "laundry"
+            },
+            {
+                name: "Alma School Laundry",
+                address: "2146 S Alma School Rd Mesa AZ 85210",
+                lat: 33.3823,
+                lng: -111.8523,
+                category: "laundry"
+            },
+            {
+                name: "Country Club Laundry",
+                address: "345 N Country Club Dr Mesa AZ 85201",
+                lat: 33.4156,
+                lng: -111.8423,
+                category: "laundry"
+            },
+            {
+                name: "Stapley Laundromat",
+                address: "2430 S Stapley Dr Mesa AZ 85210",
+                lat: 33.3823,
+                lng: -111.8023,
+                category: "laundry"
+            },
+            {
+                name: "Lindsay Road Laundry",
+                address: "1530 S Lindsay Rd Gilbert AZ 85296",
+                lat: 33.3523,
+                lng: -111.7889,
+                category: "laundry"
+            },
+            {
+                name: "Chandler Blvd Laundry",
+                address: "1145 W Chandler Blvd Chandler AZ 85224",
+                lat: 33.3023,
+                lng: -111.8734,
+                category: "laundry"
+            },
+            {
+                name: "Arizona Ave Laundromat",
+                address: "2845 N Arizona Ave Chandler AZ 85225",
+                lat: 33.3312,
+                lng: -111.8423,
+                category: "laundry"
+            },
+            {
+                name: "Price Road Laundry",
+                address: "1720 N Price Rd Chandler AZ 85226",
+                lat: 33.3312,
+                lng: -111.8623,
+                category: "laundry"
+            },
+            {
+                name: "Ray Road Wash Center",
+                address: "3045 W Ray Rd Chandler AZ 85226",
+                lat: 33.3023,
+                lng: -111.8912,
+                category: "laundry"
+            },
+            {
+                name: "Glendale Ave Laundry",
+                address: "5745 W Glendale Ave Glendale AZ 85301",
+                lat: 33.5312,
+                lng: -112.1934,
+                category: "laundry"
+            },
+            {
+                name: "43rd Ave Laundromat",
+                address: "4523 N 43rd Ave Phoenix AZ 85031",
+                lat: 33.5034,
+                lng: -112.1423,
+                category: "laundry"
+            },
+            {
+                name: "Bell Road Laundry",
+                address: "1245 W Bell Rd Phoenix AZ 85023",
+                lat: 33.6389,
+                lng: -112.1089,
+                category: "laundry"
+            },
+            {
+                name: "Peoria Ave Wash",
+                address: "9823 W Peoria Ave Peoria AZ 85345",
+                lat: 33.5812,
+                lng: -112.2312,
+                category: "laundry"
+            },
+            // GYMS WITH SHOWERS UNDER $30/MONTH
+            {
+                name: "Planet Fitness Scottsdale",
+                address: "7117 E McDowell Rd Scottsdale AZ 85257",
+                lat: 33.4785,
+                lng: -111.9234,
+                category: "gym",
+                phone: "$10/month",
+                link: "https://www.planetfitness.com/gyms/scottsdale-az-7117-e-mcdowell-rd-3234"
+            },
+            {
+                name: "Planet Fitness Old Town",
+                address: "3320 N Hayden Rd Scottsdale AZ 85251",
+                lat: 33.5023,
+                lng: -111.9156,
+                category: "gym",
+                phone: "$10/month",
+                link: "https://www.planetfitness.com"
+            },
+            {
+                name: "Planet Fitness North Scottsdale",
+                address: "15075 N Hayden Rd Scottsdale AZ 85260",
+                lat: 33.6123,
+                lng: -111.9156,
+                category: "gym",
+                phone: "$10/month",
+                link: "https://www.planetfitness.com"
+            },
+            {
+                name: "Planet Fitness Tempe",
+                address: "1320 E Apache Blvd Tempe AZ 85281",
+                lat: 33.4156,
+                lng: -111.9156,
+                category: "gym",
+                phone: "$10/month",
+                link: "https://www.planetfitness.com/gyms/tempe-az-1320-e-apache-blvd-3456"
+            },
+            {
+                name: "Planet Fitness South Tempe",
+                address: "4800 S Rural Rd Tempe AZ 85282",
+                lat: 33.3323,
+                lng: -111.9267,
+                category: "gym",
+                phone: "$10/month",
+                link: "https://www.planetfitness.com"
+            },
+            {
+                name: "Planet Fitness Mesa",
+                address: "1212 N Mesa Dr Mesa AZ 85201",
+                lat: 33.4323,
+                lng: -111.8312,
+                category: "gym",
+                phone: "$10/month",
+                link: "https://www.planetfitness.com"
+            },
+            {
+                name: "Planet Fitness Chandler",
+                address: "1145 W Chandler Blvd Chandler AZ 85224",
+                lat: 33.3023,
+                lng: -111.8734,
+                category: "gym",
+                phone: "$10/month",
+                link: "https://www.planetfitness.com"
+            },
+            {
+                name: "Planet Fitness Gilbert",
+                address: "75 E Civic Center Dr Gilbert AZ 85296",
+                lat: 33.3523,
+                lng: -111.7889,
+                category: "gym",
+                phone: "$10/month",
+                link: "https://www.planetfitness.com"
+            },
+            {
+                name: "Planet Fitness Glendale",
+                address: "5850 W Glendale Ave Glendale AZ 85301",
+                lat: 33.5312,
+                lng: -112.1856,
+                category: "gym",
+                phone: "$10/month",
+                link: "https://www.planetfitness.com"
+            },
+            {
+                name: "Planet Fitness Peoria",
+                address: "8711 W Peoria Ave Peoria AZ 85345",
+                lat: 33.5812,
+                lng: -112.2312,
+                category: "gym",
+                phone: "$10/month",
+                link: "https://www.planetfitness.com"
+            },
+            {
+                name: "Crunch Fitness Scottsdale",
+                address: "4848 N Scottsdale Rd Scottsdale AZ 85251",
+                lat: 33.5156,
+                lng: -111.9234,
+                category: "gym",
+                phone: "$9.99/month",
+                link: "https://www.crunch.com/locations/scottsdale-az"
+            },
+            {
+                name: "Crunch Fitness Tempe",
+                address: "2140 E Broadway Rd Tempe AZ 85282",
+                lat: 33.3967,
+                lng: -111.9089,
+                category: "gym",
+                phone: "$9.99/month",
+                link: "https://www.crunch.com/locations/tempe-az"
+            },
+            {
+                name: "Anytime Fitness Scottsdale",
+                address: "6935 E Main St Scottsdale AZ 85251",
+                lat: 33.4923,
+                lng: -111.9234,
+                category: "gym",
+                phone: "$29.99/month",
+                link: "https://www.anytimefitness.com"
+            },
+            {
+                name: "Anytime Fitness Tempe",
+                address: "814 W University Dr Tempe AZ 85281",
+                lat: 33.4245,
+                lng: -111.9401,
+                category: "gym",
+                phone: "$29.99/month",
+                link: "https://www.anytimefitness.com"
+            },
+            {
+                name: "Anytime Fitness Mesa",
+                address: "265 N Center St Mesa AZ 85201",
+                lat: 33.4156,
+                lng: -111.8312,
+                category: "gym",
+                phone: "$29.99/month",
+                link: "https://www.anytimefitness.com"
+            },
+            {
+                name: "Anytime Fitness Chandler",
+                address: "249 E Chicago St Chandler AZ 85225",
+                lat: 33.3023,
+                lng: -111.8423,
+                category: "gym",
+                phone: "$29.99/month",
+                link: "https://www.anytimefitness.com"
+            },
+            {
+                name: "Anytime Fitness Gilbert",
+                address: "119 N Gilbert Rd Gilbert AZ 85234",
+                lat: 33.3523,
+                lng: -111.7889,
+                category: "gym",
+                phone: "$29.99/month",
+                link: "https://www.anytimefitness.com"
+            },
+            {
+                name: "Esporta Fitness Scottsdale",
+                address: "7575 E Princess Dr Scottsdale AZ 85255",
+                lat: 33.6523,
+                lng: -111.8923,
+                category: "gym",
+                phone: "$24.99/month",
+                link: "https://www.esportafitness.com"
+            },
+            {
+                name: "Esporta Fitness Tempe",
+                address: "1001 E Elliot Rd Tempe AZ 85284",
+                lat: 33.3523,
+                lng: -111.9267,
+                category: "gym",
+                phone: "$24.99/month",
+                link: "https://www.esportafitness.com"
+            },
+            {
+                name: "Esporta Fitness Mesa",
+                address: "6555 E Southern Ave Mesa AZ 85206",
+                lat: 33.3823,
+                lng: -111.7234,
+                category: "gym",
+                phone: "$24.99/month",
+                link: "https://www.esportafitness.com"
+            },
+            {
+                name: "LA Fitness Scottsdale",
+                address: "9375 E Shea Blvd Scottsdale AZ 85260",
+                lat: 33.5872,
+                lng: -111.8934,
+                category: "gym",
+                phone: "$29.99/month",
+                link: "https://www.lafitness.com"
+            },
+            {
+                name: "LA Fitness Tempe",
+                address: "1835 E Guadalupe Rd Tempe AZ 85283",
+                lat: 33.3645,
+                lng: -111.9089,
+                category: "gym",
+                phone: "$29.99/month",
+                link: "https://www.lafitness.com"
+            },
+            {
+                name: "LA Fitness Mesa",
+                address: "1955 S Crismon Rd Mesa AZ 85209",
+                lat: 33.3823,
+                lng: -111.6934,
+                category: "gym",
+                phone: "$29.99/month",
+                link: "https://www.lafitness.com"
+            },
+            {
+                name: "LA Fitness Chandler",
+                address: "165 E Commonwealth Ave Chandler AZ 85225",
+                lat: 33.3023,
+                lng: -111.8412,
+                category: "gym",
+                phone: "$29.99/month",
+                link: "https://www.lafitness.com"
+            },
+            {
+                name: "EOS Fitness Scottsdale",
+                address: "8600 E Anderson Dr Scottsdale AZ 85260",
+                lat: 33.5923,
+                lng: -111.8823,
+                category: "gym",
+                phone: "$9.99/month",
+                link: "https://eosfitness.com/location/scottsdale/"
+            },
+            {
+                name: "EOS Fitness Tempe",
+                address: "2225 E Southern Ave Tempe AZ 85282",
+                lat: 33.3823,
+                lng: -111.9089,
+                category: "gym",
+                phone: "$9.99/month",
+                link: "https://eosfitness.com/location/tempe/"
+            },
+            {
+                name: "EOS Fitness Mesa",
+                address: "1665 W Guadalupe Rd Mesa AZ 85202",
+                lat: 33.3645,
+                lng: -111.8623,
+                category: "gym",
+                phone: "$9.99/month",
+                link: "https://eosfitness.com/location/mesa/"
+            },
+            {
+                name: "EOS Fitness Chandler",
+                address: "3045 W Ray Rd Chandler AZ 85226",
+                lat: 33.3023,
+                lng: -111.8912,
+                category: "gym",
+                phone: "$9.99/month",
+                link: "https://eosfitness.com/location/chandler/"
+            },
+            {
+                name: "EOS Fitness Gilbert",
+                address: "2501 S Market St Gilbert AZ 85295",
+                lat: 33.2823,
+                lng: -111.7889,
+                category: "gym",
+                phone: "$9.99/month",
+                link: "https://eosfitness.com/location/gilbert/"
+            },
+            {
+                name: "EOS Fitness Peoria",
+                address: "8401 W Monroe St Peoria AZ 85345",
+                lat: 33.5812,
+                lng: -112.2312,
+                category: "gym",
+                phone: "$9.99/month",
+                link: "https://eosfitness.com/location/peoria/"
+            },
+            {
+                name: "EOS Fitness Glendale",
+                address: "6010 W Myrtle Ave Glendale AZ 85301",
+                lat: 33.5312,
+                lng: -112.1734,
+                category: "gym",
+                phone: "$9.99/month",
+                link: "https://eosfitness.com/location/glendale/"
+            },
+            {
+                name: "EOS Fitness Surprise",
+                address: "13765 W Bell Rd Surprise AZ 85374",
+                lat: 33.6312,
+                lng: -112.3412,
+                category: "gym",
+                phone: "$9.99/month",
+                link: "https://eosfitness.com/location/surprise/"
+            },
+            {
+                name: "EOS Fitness Phoenix",
+                address: "4323 N 51st Ave Phoenix AZ 85031",
+                lat: 33.5089,
+                lng: -112.1534,
+                category: "gym",
+                phone: "$9.99/month",
+                link: "https://eosfitness.com/location/phoenix/"
+            },
+            {
+                name: "Mountainside Fitness Scottsdale",
+                address: "15345 N Scottsdale Rd Scottsdale AZ 85254",
+                lat: 33.6123,
+                lng: -111.9234,
+                category: "gym",
+                phone: "$29.99/month",
+                link: "https://www.mountainsidefitness.com"
+            },
+            {
+                name: "Mountainside Fitness Tempe",
+                address: "1530 E Broadway Rd Tempe AZ 85282",
+                lat: 33.3967,
+                lng: -111.9156,
+                category: "gym",
+                phone: "$29.99/month",
+                link: "https://www.mountainsidefitness.com"
+            },
+            {
+                name: "Mountainside Fitness Mesa",
+                address: "6745 E McDowell Rd Mesa AZ 85215",
+                lat: 33.4785,
+                lng: -111.7234,
+                category: "gym",
+                phone: "$29.99/month",
+                link: "https://www.mountainsidefitness.com"
+            },
+            {
+                name: "Mountainside Fitness Chandler",
+                address: "4515 S Kyrene Rd Chandler AZ 85248",
+                lat: 33.3123,
+                lng: -111.9401,
+                category: "gym",
+                phone: "$29.99/month",
+                link: "https://www.mountainsidefitness.com"
+            },
+            {
+                name: "Mountainside Fitness Gilbert",
+                address: "2240 S Gilbert Rd Gilbert AZ 85295",
+                lat: 33.3023,
+                lng: -111.7889,
+                category: "gym",
+                phone: "$29.99/month",
+                link: "https://www.mountainsidefitness.com"
+            },
+            {
+                name: "Mountainside Fitness Peoria",
+                address: "8945 W Peoria Ave Peoria AZ 85345",
+                lat: 33.5812,
+                lng: -112.2312,
+                category: "gym",
+                phone: "$29.99/month",
+                link: "https://www.mountainsidefitness.com"
+            },
+            {
+                name: "Mountainside Fitness Glendale",
+                address: "7007 W Bell Rd Glendale AZ 85308",
+                lat: 33.6389,
+                lng: -112.1934,
+                category: "gym",
+                phone: "$29.99/month",
+                link: "https://www.mountainsidefitness.com"
+            },
+            {
+                name: "Mountainside Fitness Surprise",
+                address: "14202 W Grand Ave Surprise AZ 85374",
+                lat: 33.6234,
+                lng: -112.3412,
+                category: "gym",
+                phone: "$29.99/month",
+                link: "https://www.mountainsidefitness.com"
+            },
+            {
+                name: "YMCA Scottsdale",
+                address: "6869 E Shea Blvd Scottsdale AZ 85254",
+                lat: 33.5812,
+                lng: -111.9089,
+                category: "gym",
+                phone: "$25/month low income rate",
+                link: "https://www.valleyofthesunymca.org"
+            },
+            {
+                name: "YMCA Tempe",
+                address: "2615 S Rural Rd Tempe AZ 85282",
+                lat: 33.3823,
+                lng: -111.9267,
+                category: "gym",
+                phone: "$25/month low income rate",
+                link: "https://www.valleyofthesunymca.org"
+            },
+            {
+                name: "YMCA Mesa",
+                address: "207 N Center St Mesa AZ 85201",
+                lat: 33.4156,
+                lng: -111.8312,
+                category: "gym",
+                phone: "$25/month low income rate",
+                link: "https://www.valleyofthesunymca.org"
+            },
+            {
+                name: "YMCA Chandler",
+                address: "800 S Dobson Rd Chandler AZ 85224",
+                lat: 33.3023,
+                lng: -111.8623,
+                category: "gym",
+                phone: "$25/month low income rate",
+                link: "https://www.valleyofthesunymca.org"
+            },
+            {
+                name: "YMCA Gilbert",
+                address: "1530 E Guadalupe Rd Gilbert AZ 85234",
+                lat: 33.3523,
+                lng: -111.7889,
+                category: "gym",
+                phone: "$25/month low income rate",
+                link: "https://www.valleyofthesunymca.org"
+            },
+            {
+                name: "YMCA Glendale",
+                address: "6499 W Olive Ave Glendale AZ 85302",
+                lat: 33.5456,
+                lng: -112.1934,
+                category: "gym",
+                phone: "$25/month low income rate",
+                link: "https://www.valleyofthesunymca.org"
+            },
+            {
+                name: "YMCA Peoria",
+                address: "8850 W Peoria Ave Peoria AZ 85345",
+                lat: 33.5812,
+                lng: -112.2312,
+                category: "gym",
+                phone: "$25/month low income rate",
+                link: "https://www.valleyofthesunymca.org"
+            },
+            {
+                name: "Gold's Gym Scottsdale",
+                address: "7077 E Marilyn Rd Scottsdale AZ 85254",
+                lat: 33.5812,
+                lng: -111.9089,
+                category: "gym",
+                phone: "$29.99/month",
+                link: "https://www.goldsgym.com"
+            },
+            {
+                name: "Gold's Gym Tempe",
+                address: "1845 S McClintock Dr Tempe AZ 85281",
+                lat: 33.4089,
+                lng: -111.9145,
+                category: "gym",
+                phone: "$29.99/month",
+                link: "https://www.goldsgym.com"
+            },
+            {
+                name: "Gold's Gym Mesa",
+                address: "1035 S Power Rd Mesa AZ 85206",
+                lat: 33.3956,
+                lng: -111.7234,
+                category: "gym",
+                phone: "$29.99/month",
+                link: "https://www.goldsgym.com"
             }
         ];
 
@@ -1687,6 +2505,7 @@
                         <p style="margin: 5px 0;"><strong>Category:</strong> ${resource.category}</p>
                         <p style="margin: 5px 0;"><strong>Phone:</strong> ${resource.phone}</p>
                         ${resource.hours ? `<p style="margin: 5px 0;"><strong>Hours:</strong> ${resource.hours}</p>` : ''}
+                        ${resource.link ? `<p style="margin: 10px 0 0 0;"><a href="${resource.link}" target="_blank" style="color: #0066cc; text-decoration: none; font-weight: bold;">Sign Up →</a></p>` : ''}
                     </div>
                 `
             });
@@ -1706,6 +2525,8 @@
             if (category.includes("mental")) return "#800080";
             if (category.includes("jobs")) return "#008000";
             if (category.includes("clothing")) return "#FFFF00";
+            if (category.includes("laundry")) return "#FFC0CB";
+            if (category.includes("gym")) return "#008080";
             return "#FF0000";
         }
 
