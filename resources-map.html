@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Resources Near You | Claude's House Phoenix</title>
+    <meta name="description" content="Find homeless shelters, food banks, showers, clothing, mental health services and more near you in Phoenix Arizona. Interactive map with filters.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVOG1QsKXDSQ0dyOU6I57v_CIFMcZs9wU&libraries=places"></script>
+    <style>
+        .map-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .search-bar {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .search-bar input {
+            flex: 1;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+        .search-bar button {
+            padding: 1rem 2rem;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .filter-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .filter-item input {
+            width: 18px;
+            height: 18px;
+        }
+        .filter-item label {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+        #map {
+            width: 100%;
+            height: 500px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Claude's House</a>
+            <div class="nav-links">
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="gethelp.html">Get Help</a>
+                <a href="donate.html">Donate</a>
+                <a href="financials.html">Financials</a>
+                <a href="volunteer.html">Volunteer</a>
+                <a href="blog.html">Updates</a>
+                <a href="contact.html">Contact</a>
+                <a href="resources-map.html">Find Resources</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Find Resources Near You</h1>
+            <p>Search for shelters, food banks, showers, clothing, mental health services and more in Phoenix Arizona.</p>
+        </div>
+    </section>
+
+    <section class="map-container">
+        <div class="search-bar">
+            <input type="text" id="address-input" placeholder="Enter your address or zip code">
+            <button onclick="searchAddress()">Search</button>
+        </div>
+
+        <div class="filters">
+            <div class="filter-item">
+                <input type="checkbox" id="filter-shelter" value="shelter" onchange="filterMarkers()">
+                <label for="filter-shelter">Shelter</label>
+            </div>
+            <div class="filter-item">
+                <input type="checkbox" id="filter-food" value="food" onchange="filterMarkers()">
+                <label for="filter-food">Food Bank</label>
+            </div>
+            <div class="filter-item">
+                <input type="checkbox" id="filter-showers" value="showers" onchange="filterMarkers()">
+                <label for="filter-showers">Showers</label>
+            </div>
+            <div class="filter-item">
+                <input type="checkbox" id="filter-clothing" value="clothing" onchange="filterMarkers()">
+                <label for="filter-clothing">Clothing</label>
+            </div>
+            <div class="filter-item">
+                <input type="checkbox" id="filter-mental" value="mental health" onchange="filterMarkers()">
+                <label for="filter-mental">Mental Health</label>
+            </div>
+            <div class="filter-item">
+                <input type="checkbox" id="filter-medical" value="medical" onchange="filterMarkers()">
+                <label for="filter-medical">Medical</label>
+            </div>
+            <div class="filter-item">
+                <input type="checkbox" id="filter-jobs" value="jobs" onchange="filterMarkers()">
+                <label for="filter-jobs">Job Assistance</label>
+            </div>
+            <div class="filter-item">
+                <input type="checkbox" id="filter-phone" value="phone" onchange="filterMarkers()">
+                <label for="filter-phone">Phone / Internet</label>
+            </div>
+        </div>
+
+        <div id="map"></div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Claude's House &mdash; Phoenix, AZ</p>
+            <p>Founded by Claude A. Thompson</p>
+            <div class="footer-links">
+                <a href="contact.html">Contact Us</a>
+                <a href="#">EIN: [PENDING]</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let map;
+        let markers = [];
+        let userMarker = null;
+
+        const resources = [
+            // SHELTERS
+            {
+                name: "Human Services Campus",
+                address: "220 S 12th Ave Phoenix AZ 85007",
+                lat: 33.4485,
+                lng: -112.0837,
+                category: "shelter",
+                phone: "(602) 271-0893",
+                hours: "24 hours"
+            },
+            {
+                name: "Lodestar Day Resource Center",
+                address: "220 S 12th Ave Phoenix AZ 85007",
+                lat: 33.4486,
+                lng: -112.0836,
+                category: "shower, shelter, laundry",
+                phone: "(602) 595-0503"
+            },
+            {
+                name: "St Vincent de Paul",
+                address: "420 W Watkins St Phoenix AZ 85003",
+                lat: 33.4365,
+                lng: -112.0821,
+                category: "shelter, food, clothing",
+                phone: "(602) 261-6886"
+            },
+            // FOOD
+            {
+                name: "St Mary's Food Bank",
+                address: "2831 N 31st Ave Phoenix AZ 85009",
+                lat: 33.4912,
+                lng: -112.1087,
+                category: "food",
+                phone: "(602) 242-3663"
+            },
+            {
+                name: "Paz de Cristo",
+                address: "777 N Dobson Rd Mesa AZ 85201",
+                lat: 33.4152,
+                lng: -111.8523,
+                category: "food",
+                phone: "(480) 834-0186"
+            },
+            {
+                name: "Andre House",
+                address: "314 W Van Buren St Phoenix AZ 85003",
+                lat: 33.4481,
+                lng: -112.0796,
+                category: "food, clothing",
+                phone: "(602) 252-9439"
+            },
+            // MENTAL HEALTH
+            {
+                name: "Crisis Response Network",
+                address: "Maricopa County",
+                lat: 33.4484,
+                lng: -112.0740,
+                category: "mental health",
+                phone: "(602) 222-9444",
+                hours: "24 hours"
+            },
+            {
+                name: "EMPACT-SPC",
+                address: "1232 E Broadway Rd Tempe AZ 85282",
+                lat: 33.3953,
+                lng: -111.9284,
+                category: "mental health",
+                phone: "(480) 784-1514"
+            },
+            // JOB ASSISTANCE
+            {
+                name: "Maricopa Workforce Connection",
+                address: "Phoenix Metro",
+                lat: 33.4484,
+                lng: -112.0740,
+                category: "jobs",
+                phone: "(480) 784-0500"
+            }
+        ];
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: 33.4484, lng: -112.0740 },
+                zoom: 11
+            });
+
+            // Add markers for all resources
+            resources.forEach(resource => {
+                addMarker(resource);
+            });
+
+            // Initialize autocomplete for address input
+            const autocomplete = new google.maps.places.Autocomplete(
+                document.getElementById("address-input")
+            );
+        }
+
+        function addMarker(resource) {
+            const color = getMarkerColor(resource.category);
+            const marker = new google.maps.Marker({
+                position: { lat: resource.lat, lng: resource.lng },
+                map: map,
+                title: resource.name,
+                icon: {
+                    path: google.maps.SymbolPath.CIRCLE,
+                    scale: 10,
+                    fillColor: color,
+                    fillOpacity: 1,
+                    strokeColor: "#ffffff",
+                    strokeWeight: 2
+                }
+            });
+
+            const infoWindow = new google.maps.InfoWindow({
+                content: `
+                    <div style="padding: 10px;">
+                        <h3 style="margin: 0 0 10px 0; color: #333;">${resource.name}</h3>
+                        <p style="margin: 5px 0;"><strong>Address:</strong> ${resource.address}</p>
+                        <p style="margin: 5px 0;"><strong>Category:</strong> ${resource.category}</p>
+                        <p style="margin: 5px 0;"><strong>Phone:</strong> ${resource.phone}</p>
+                        ${resource.hours ? `<p style="margin: 5px 0;"><strong>Hours:</strong> ${resource.hours}</p>` : ''}
+                    </div>
+                `
+            });
+
+            marker.addListener("click", () => {
+                infoWindow.open(map, marker);
+            });
+
+            marker.category = resource.category;
+            markers.push(marker);
+        }
+
+        function getMarkerColor(category) {
+            if (category.includes("shelter")) return "#FF0000";
+            if (category.includes("food")) return "#FFA500";
+            if (category.includes("shower")) return "#0000FF";
+            if (category.includes("mental")) return "#800080";
+            if (category.includes("jobs")) return "#008000";
+            if (category.includes("clothing")) return "#FFFF00";
+            return "#FF0000";
+        }
+
+        function searchAddress() {
+            const address = document.getElementById("address-input").value;
+            const geocoder = new google.maps.Geocoder();
+
+            geocoder.geocode({ address: address }, (results, status) => {
+                if (status === "OK") {
+                    map.setCenter(results[0].geometry.location);
+                    map.setZoom(13);
+
+                    // Add blue marker for user's location
+                    if (userMarker) {
+                        userMarker.setMap(null);
+                    }
+                    userMarker = new google.maps.Marker({
+                        position: results[0].geometry.location,
+                        map: map,
+                        title: "Your Location",
+                        icon: {
+                            path: google.maps.SymbolPath.CIRCLE,
+                            scale: 12,
+                            fillColor: "#0000FF",
+                            fillOpacity: 1,
+                            strokeColor: "#ffffff",
+                            strokeWeight: 2
+                        }
+                    });
+                } else {
+                    alert("Address not found: " + status);
+                }
+            });
+        }
+
+        function filterMarkers() {
+            const checkedFilters = [];
+            document.querySelectorAll('.filter-item input:checked').forEach(checkbox => {
+                checkedFilters.push(checkbox.value);
+            });
+
+            markers.forEach(marker => {
+                if (checkedFilters.length === 0) {
+                    marker.setMap(map);
+                } else {
+                    const matches = checkedFilters.some(filter => 
+                        marker.category.includes(filter)
+                    );
+                    marker.setMap(matches ? map : null);
+                }
+            });
+        }
+
+        // Initialize map when page loads
+        window.onload = initMap;
+    </script>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
