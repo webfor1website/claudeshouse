@@ -287,28 +287,10 @@ section {
     background-color: var(--white);
 }
 
-.founder-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.founder-image {
-    height: 500px;
-}
-
-.placeholder-image {
-    width: 100%;
-    height: 100%;
-    background-color: var(--secondary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-color);
-    font-size: 0.9rem;
-    opacity: 0.5;
-    border-radius: 8px;
+.founder-bio {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .founder-bio h2 {
