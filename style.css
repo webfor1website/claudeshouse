@@ -493,6 +493,16 @@ section {
     color: var(--text-color);
 }
 
+.help-text {
+    font-size: 1rem;
+    margin-top: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
 /* Giving Levels */
 .giving-levels {
     background-color: var(--white);
