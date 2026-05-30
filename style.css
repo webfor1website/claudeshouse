@@ -490,6 +490,14 @@ section {
 .resource-form form button {
     width: 100%;
     display: block;
+    margin-bottom: 1rem;
+}
+
+.resource-form > .container > a.btn {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
 .alternative-text {
