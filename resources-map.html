@@ -125,17 +125,27 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="index.html" class="logo">Claude's House</a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <div class="nav-links">
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
-                <a href="gethelp.html" class="nav-cta">Get Help Now</a>
-                <a href="resources-map.html">Find Resources On The Map</a>
-                <a href="https://www.211arizona.org" target="_blank">Find Resources Near Me</a>
-                <a href="donate.html">Donate</a>
-                <a href="financials.html">Financials</a>
-                <a href="volunteer.html">Volunteer</a>
-                <a href="blog.html">Updates</a>
-                <a href="contact.html">Contact</a>
+                <a href="about.html" onclick="closeMenu()">About</a>
+                <a href="services.html" onclick="closeMenu()">Services</a>
+                <a href="gethelp.html" class="nav-cta" onclick="closeMenu()">Get Help Now</a>
+                <a href="resources-map.html" onclick="closeMenu()">Find Resources On The Map</a>
+                <a href="https://www.211arizona.org" target="_blank" onclick="closeMenu()">Find Resources Near Me</a>
+                <a href="churches.html" onclick="closeMenu()">Churches</a>
+                <a href="aa-meetings.html" onclick="closeMenu()">AA / NA</a>
+                <a href="resources.html" onclick="closeMenu()">Resources</a>
+                <a href="heat-relief.html" onclick="closeMenu()">Heat Relief</a>
+                <a href="legal-aid.html" onclick="closeMenu()">Legal Aid</a>
+                <a href="donate.html" onclick="closeMenu()">Donate</a>
+                <a href="financials.html" onclick="closeMenu()">Financials</a>
+                <a href="volunteer.html" onclick="closeMenu()">Volunteer</a>
+                <a href="blog.html" onclick="closeMenu()">Updates</a>
+                <a href="contact.html" onclick="closeMenu()">Contact</a>
             </div>
         </div>
     </nav>
@@ -3335,11 +3345,16 @@
             });
         }
 
-        // Initialize map when page loads
-        window.onload = initMap;
-    </script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
 
-    <script>
+        function closeMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.remove('active');
+        }
+
         window.addEventListener('scroll', function() {
             const nav = document.querySelector('.nav');
             if (window.scrollY > 50) {
@@ -3348,6 +3363,10 @@
                 nav.classList.remove('nav-scrolled');
             }
         });
+
+        // Initialize map when page loads
+        window.onload = initMap;
     </script>
+
 </body>
 </html>
