@@ -37,26 +37,32 @@
 
     <section class="page-hero">
         <div class="container">
-            <h1>Donate</h1>
+            <h1>Donations Coming Soon</h1>
         </div>
     </section>
 
-    <section class="giving-levels">
+    <section class="content-section">
         <div class="container">
-            <h2>Choose Your Impact</h2>
-            <div class="giving-grid">
-                <div class="giving-card">
-                    <h3>$25</h3>
-                    <p>Feeds someone for a week</p>
+            <div class="content-text">
+                <p>Claude's House is completing our 501c3 nonprofit registration and establishing the legal and financial infrastructure needed to responsibly accept and manage donations.</p>
+                <p>We are not yet accepting donations. We want to make sure every dollar you give is handled properly, reported transparently, and used exclusively for the people we serve.</p>
+                <p>Leave your email below and we will notify you the moment we are ready to receive support.</p>
+            </div>
+
+            <form name="donor-waitlist" method="POST" data-netlify="true" action="/thankyou.html" class="contact-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
-                <div class="giving-card featured">
-                    <h3>$100</h3>
-                    <p>Covers one night of shelter plus meals</p>
+                <div class="form-group">
+                    <label for="name">Name (optional)</label>
+                    <input type="text" id="name" name="name">
                 </div>
-                <div class="giving-card">
-                    <h3>$500</h3>
-                    <p>One month of support for one person</p>
-                </div>
+                <button type="submit" class="btn btn-primary">Notify Me When Ready →</button>
+            </form>
+
+            <div class="note-box">
+                <p>We expect to be accepting donations within 60 days. No spam. Just one email when we are ready.</p>
             </div>
         </div>
     </section>
@@ -65,35 +71,6 @@
         <div class="container">
             <h2>Our Transparency Pledge</h2>
             <p>Every dollar accounted for. Published monthly. Always.</p>
-            <p>We publish our full financial statements every single month. You can see exactly where your money goes. No hidden fees. No administrative bloat. Just direct support for people who need it.</p>
-        </div>
-    </section>
-
-    <section class="donation-form">
-        <div class="container">
-            <h2>Make a Donation</h2>
-            <form action="https://formsubmit.co/spaceexplorationtechnologiesco@proton.me" method="POST">
-                <input type="hidden" name="_next" value="https://claudeshouse.org/thankyou.html">
-                <input type="hidden" name="_subject" value="New Claude's House Donation Inquiry">
-                <input type="hidden" name="_captcha" value="false">
-                <div class="form-group">
-                    <label for="amount">Amount</label>
-                    <input type="number" id="amount" name="amount" placeholder="Enter amount" required>
-                </div>
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="card">Card Number</label>
-                    <input type="text" id="card" name="card" placeholder="XXXX XXXX XXXX XXXX">
-                </div>
-                <button type="submit" class="btn btn-primary">Donate Now</button>
-            </form>
         </div>
     </section>
 
