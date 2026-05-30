@@ -62,7 +62,8 @@
     <section class="volunteer-form">
         <div class="container">
             <h2>Sign Up to Volunteer</h2>
-            <form action="#" method="POST">
+            <form name="volunteer" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="volunteer">
                 <div class="form-group">
                     <label for="name">Your Name</label>
                     <input type="text" id="name" name="name" required>
