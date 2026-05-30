@@ -79,6 +79,18 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://claudeshouse.org/heat-relief.html</loc>
+        <lastmod>2026-05-30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://claudeshouse.org/legal-aid.html</loc>
+        <lastmod>2026-05-30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://claudeshouse.org/newsroom/why-we-built-this.html</loc>
         <lastmod>2026-05-30</lastmod>
         <changefreq>monthly</changefreq>
