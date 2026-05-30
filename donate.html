@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate | Support Claude's House Phoenix</title>
+    <meta name="description" content="Support Claude's House and help provide shelter, meals, and community for Phoenix's homeless and mentally ill population. 100% transparent financials.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Claude's House</a>
+            <div class="nav-links">
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="gethelp.html">Get Help</a>
+                <a href="donate.html">Donate</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Donate</h1>
+        </div>
+    </section>
+
+    <section class="giving-levels">
+        <div class="container">
+            <h2>Choose Your Impact</h2>
+            <div class="giving-grid">
+                <div class="giving-card">
+                    <h3>$25</h3>
+                    <p>Feeds someone for a week</p>
+                </div>
+                <div class="giving-card featured">
+                    <h3>$100</h3>
+                    <p>Covers one night of shelter plus meals</p>
+                </div>
+                <div class="giving-card">
+                    <h3>$500</h3>
+                    <p>One month of support for one person</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="transparency-pledge">
+        <div class="container">
+            <h2>Our Transparency Pledge</h2>
+            <p>Every dollar accounted for. Published monthly. Always.</p>
+            <p>We publish our full financial statements every single month. You can see exactly where your money goes. No hidden fees. No administrative bloat. Just direct support for people who need it.</p>
+        </div>
+    </section>
+
+    <section class="donation-form">
+        <div class="container">
+            <h2>Make a Donation</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" name="amount" placeholder="Enter amount" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="card">Card Number</label>
+                    <input type="text" id="card" name="card" placeholder="XXXX XXXX XXXX XXXX">
+                </div>
+                <button type="submit" class="btn btn-primary">Donate Now</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Claude's House &mdash; Phoenix, AZ</p>
+            <p>Founded by Claude A. Thompson</p>
+            <div class="footer-links">
+                <a href="contact.html">Contact Us</a>
+                <a href="#">EIN: [PENDING]</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

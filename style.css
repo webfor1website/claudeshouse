@@ -1,0 +1,676 @@
+/* Claude's House - Warm, Welcoming, Hopeful */
+
+:root {
+    --bg-color: #FAFAF8;
+    --text-color: #2C2C2C;
+    --primary: #4A90A4;
+    --accent: #C9A96E;
+    --secondary: #F5F0E8;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Navigation */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.nav-scrolled {
+    background-color: var(--bg-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--bg-color) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(74, 144, 164, 0.1);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0 2rem;
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.hero-subheading {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    color: var(--text-color);
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #3d7a8c;
+}
+
+.btn-secondary {
+    background-color: var(--accent);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: #b0955e;
+}
+
+/* Sections */
+section {
+    padding: 5rem 0;
+}
+
+/* Services Preview */
+.services-preview {
+    background-color: var(--white);
+}
+
+.services-preview h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: var(--secondary);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+/* Promise */
+.promise {
+    background-color: var(--secondary);
+    text-align: center;
+}
+
+.promise h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.promise p {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Testimonial */
+.testimonial {
+    background-color: var(--white);
+}
+
+.testimonial-card {
+    background-color: var(--secondary);
+    padding: 3rem;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.testimonial-text {
+    font-size: 1.25rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.testimonial-author {
+    font-size: 1rem;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+/* Donate CTA */
+.donate-cta {
+    background-color: var(--primary);
+    text-align: center;
+    color: var(--white);
+}
+
+.donate-cta h2 {
+    color: var(--white);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.donate-cta .btn {
+    background-color: var(--white);
+    color: var(--primary);
+}
+
+.donate-cta .btn:hover {
+    background-color: var(--secondary);
+}
+
+/* Page Hero */
+.page-hero {
+    padding: 8rem 0 4rem;
+    background-color: var(--secondary);
+    text-align: center;
+}
+
+.page-hero h1 {
+    font-size: 3rem;
+    color: var(--text-color);
+}
+
+/* Founder */
+.founder {
+    background-color: var(--white);
+}
+
+.founder-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.founder-image {
+    height: 500px;
+}
+
+.placeholder-image {
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    opacity: 0.5;
+    border-radius: 8px;
+}
+
+.founder-bio h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.founder-bio p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+}
+
+/* Mission */
+.mission {
+    background-color: var(--secondary);
+    text-align: center;
+}
+
+.mission h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.mission p {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Transparency */
+.transparency {
+    background-color: var(--white);
+    text-align: center;
+}
+
+.transparency h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.transparency p {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.8;
+}
+
+/* Services Detail */
+.services-detail {
+    background-color: var(--white);
+}
+
+.service-detail-card {
+    background-color: var(--secondary);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.service-detail-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.service-detail-card p {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Mental Health & Job Skills */
+.mental-health, .job-skills {
+    background-color: var(--secondary);
+    text-align: center;
+}
+
+.mental-health h2, .job-skills h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.mental-health p, .job-skills p {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Help Info */
+.help-info {
+    background-color: var(--white);
+}
+
+.help-info h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.help-message {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.info-card {
+    background-color: var(--secondary);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.info-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.info-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* What to Expect */
+.what-to-expect {
+    background-color: var(--secondary);
+}
+
+.what-to-expect h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.expect-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.expect-item {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.expect-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.expect-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Giving Levels */
+.giving-levels {
+    background-color: var(--white);
+}
+
+.giving-levels h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.giving-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.giving-card {
+    background-color: var(--secondary);
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid transparent;
+}
+
+.giving-card.featured {
+    border-color: var(--accent);
+}
+
+.giving-card h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.giving-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Transparency Pledge */
+.transparency-pledge {
+    background-color: var(--secondary);
+    text-align: center;
+}
+
+.transparency-pledge h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.transparency-pledge p {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.8;
+}
+
+/* Donation Form */
+.donation-form {
+    background-color: var(--white);
+}
+
+.donation-form h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.donation-form form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: var(--white);
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.contact-info h2,
+.contact-form h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    margin-bottom: 2rem;
+}
+
+.contact-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.contact-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.contact-form form {
+    max-width: 500px;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--text-color);
+    color: var(--white);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.footer p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links {
+    margin-top: 1.5rem;
+}
+
+.footer-links a {
+    color: var(--white);
+    text-decoration: none;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subheading {
+        font-size: 1rem;
+    }
+    
+    .services-grid,
+    .info-grid,
+    .giving-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .founder-grid,
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .founder-image {
+        height: 300px;
+    }
+}
