@@ -798,6 +798,47 @@ section {
     text-decoration: underline;
 }
 
+/* Blog Article */
+.blog-article {
+    background-color: var(--white);
+    padding: 5rem 0;
+}
+
+.article-date {
+    font-size: 0.9rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.blog-article h1 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    line-height: 1.2;
+}
+
+.article-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.article-content p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+}
+
+.signature {
+    margin-top: 3rem;
+    font-style: italic;
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+.article-nav {
+    margin-top: 4rem;
+    text-align: center;
+}
+
 /* Footer */
 .footer {
     background-color: var(--text-color);
