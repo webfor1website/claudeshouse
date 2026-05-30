@@ -237,15 +237,124 @@
                 zoom: 11
             });
 
-            // Add markers for all resources
+            // Add markers for all hardcoded resources
             resources.forEach(resource => {
                 addMarker(resource);
+            });
+
+            // Initialize PlacesService and search for nearby resources
+            const service = new google.maps.places.PlacesService(map);
+            const phoenixCenter = { lat: 33.4484, lng: -112.0740 };
+
+            // Search 1: Food banks
+            service.nearbySearch({
+                location: phoenixCenter,
+                radius: 20000,
+                type: 'food_bank'
+            }, (results, status) => {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    results.forEach(place => {
+                        addPlaceMarker(place, 'food bank');
+                    });
+                }
+            });
+
+            // Search 2: Homeless shelters
+            service.nearbySearch({
+                location: phoenixCenter,
+                radius: 20000,
+                keyword: 'homeless shelter'
+            }, (results, status) => {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    results.forEach(place => {
+                        addPlaceMarker(place, 'shelter');
+                    });
+                }
+            });
+
+            // Search 3: Mental health services
+            service.nearbySearch({
+                location: phoenixCenter,
+                radius: 20000,
+                keyword: 'mental health services'
+            }, (results, status) => {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    results.forEach(place => {
+                        addPlaceMarker(place, 'mental health');
+                    });
+                }
+            });
+
+            // Search 4: Food pantries
+            service.nearbySearch({
+                location: phoenixCenter,
+                radius: 20000,
+                keyword: 'food pantry'
+            }, (results, status) => {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    results.forEach(place => {
+                        addPlaceMarker(place, 'food pantry');
+                    });
+                }
+            });
+
+            // Search 5: Community services
+            service.nearbySearch({
+                location: phoenixCenter,
+                radius: 20000,
+                keyword: 'community services'
+            }, (results, status) => {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    results.forEach(place => {
+                        addPlaceMarker(place, 'community services');
+                    });
+                }
             });
 
             // Initialize autocomplete for address input
             const autocomplete = new google.maps.places.Autocomplete(
                 document.getElementById("address-input")
             );
+        }
+
+        function addPlaceMarker(place, category) {
+            const color = getMarkerColor(category);
+            const marker = new google.maps.Marker({
+                position: place.geometry.location,
+                map: map,
+                title: place.name,
+                icon: {
+                    path: google.maps.SymbolPath.CIRCLE,
+                    scale: 10,
+                    fillColor: color,
+                    fillOpacity: 1,
+                    strokeColor: "#ffffff",
+                    strokeWeight: 2
+                }
+            });
+
+            let phoneText = '';
+            if (place.formatted_phone_number) {
+                phoneText = `<p style="margin: 5px 0;"><strong>Phone:</strong> ${place.formatted_phone_number}</p>`;
+            }
+
+            const infoWindow = new google.maps.InfoWindow({
+                content: `
+                    <div style="padding: 10px;">
+                        <h3 style="margin: 0 0 10px 0; color: #333;">${place.name}</h3>
+                        <p style="margin: 5px 0;"><strong>Address:</strong> ${place.formatted_address || 'Address not available'}</p>
+                        <p style="margin: 5px 0;"><strong>Category:</strong> ${category}</p>
+                        ${phoneText}
+                    </div>
+                `
+            });
+
+            marker.addListener("click", () => {
+                infoWindow.open(map, marker);
+            });
+
+            marker.category = category;
+            markers.push(marker);
         }
 
         function addMarker(resource) {
@@ -318,6 +427,83 @@
                             fillOpacity: 1,
                             strokeColor: "#ffffff",
                             strokeWeight: 2
+                        }
+                    });
+
+                    // Search for resources near user's location
+                    const service = new google.maps.places.PlacesService(map);
+                    const userLocation = results[0].geometry.location;
+
+                    // Clear existing dynamic markers (keep hardcoded ones)
+                    markers.forEach((marker, index) => {
+                        if (index >= resources.length) {
+                            marker.setMap(null);
+                        }
+                    });
+                    markers = markers.slice(0, resources.length);
+
+                    // Search 1: Food banks near user
+                    service.nearbySearch({
+                        location: userLocation,
+                        radius: 20000,
+                        type: 'food_bank'
+                    }, (results, status) => {
+                        if (status === google.maps.places.PlacesServiceStatus.OK) {
+                            results.forEach(place => {
+                                addPlaceMarker(place, 'food bank');
+                            });
+                        }
+                    });
+
+                    // Search 2: Homeless shelters near user
+                    service.nearbySearch({
+                        location: userLocation,
+                        radius: 20000,
+                        keyword: 'homeless shelter'
+                    }, (results, status) => {
+                        if (status === google.maps.places.PlacesServiceStatus.OK) {
+                            results.forEach(place => {
+                                addPlaceMarker(place, 'shelter');
+                            });
+                        }
+                    });
+
+                    // Search 3: Mental health services near user
+                    service.nearbySearch({
+                        location: userLocation,
+                        radius: 20000,
+                        keyword: 'mental health services'
+                    }, (results, status) => {
+                        if (status === google.maps.places.PlacesServiceStatus.OK) {
+                            results.forEach(place => {
+                                addPlaceMarker(place, 'mental health');
+                            });
+                        }
+                    });
+
+                    // Search 4: Food pantries near user
+                    service.nearbySearch({
+                        location: userLocation,
+                        radius: 20000,
+                        keyword: 'food pantry'
+                    }, (results, status) => {
+                        if (status === google.maps.places.PlacesServiceStatus.OK) {
+                            results.forEach(place => {
+                                addPlaceMarker(place, 'food pantry');
+                            });
+                        }
+                    });
+
+                    // Search 5: Community services near user
+                    service.nearbySearch({
+                        location: userLocation,
+                        radius: 20000,
+                        keyword: 'community services'
+                    }, (results, status) => {
+                        if (status === google.maps.places.PlacesServiceStatus.OK) {
+                            results.forEach(place => {
+                                addPlaceMarker(place, 'community services');
+                            });
                         }
                     });
                 } else {
