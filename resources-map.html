@@ -2744,7 +2744,12 @@
 
             let phoneText = '';
             if (place.formatted_phone_number) {
-                phoneText = `<p style="margin: 5px 0;"><strong>Phone:</strong> ${place.formatted_phone_number}</p>`;
+                phoneText = `<p style="margin: 5px 0;"><strong>Phone:</strong> <a href="tel:${place.formatted_phone_number.replace(/[^0-9]/g, '')}" style="color: #0066cc; text-decoration: none;">${place.formatted_phone_number}</a></p>`;
+            }
+
+            let websiteText = '';
+            if (place.website) {
+                websiteText = `<p style="margin: 10px 0 0 0;"><a href="${place.website}" target="_blank" style="color: #0066cc; text-decoration: none; font-weight: bold;">Visit Website →</a></p>`;
             }
 
             const infoWindow = new google.maps.InfoWindow({
@@ -2754,6 +2759,7 @@
                         <p style="margin: 5px 0;"><strong>Address:</strong> ${place.formatted_address || 'Address not available'}</p>
                         <p style="margin: 5px 0;"><strong>Category:</strong> ${category}</p>
                         ${phoneText}
+                        ${websiteText}
                     </div>
                 `
             });
@@ -2788,9 +2794,9 @@
                         <h3 style="margin: 0 0 10px 0; color: #333;">${resource.name}</h3>
                         <p style="margin: 5px 0;"><strong>Address:</strong> ${resource.address}</p>
                         <p style="margin: 5px 0;"><strong>Category:</strong> ${resource.category}</p>
-                        <p style="margin: 5px 0;"><strong>Phone:</strong> ${resource.phone}</p>
+                        <p style="margin: 5px 0;"><strong>Phone:</strong> <a href="tel:${resource.phone.replace(/[^0-9]/g, '')}" style="color: #0066cc; text-decoration: none;">${resource.phone}</a></p>
                         ${resource.hours ? `<p style="margin: 5px 0;"><strong>Hours:</strong> ${resource.hours}</p>` : ''}
-                        ${resource.link ? `<p style="margin: 10px 0 0 0;"><a href="${resource.link}" target="_blank" style="color: #0066cc; text-decoration: none; font-weight: bold;">Sign Up →</a></p>` : ''}
+                        ${resource.link ? `<p style="margin: 10px 0 0 0;"><a href="${resource.link}" target="_blank" style="color: #0066cc; text-decoration: none; font-weight: bold;">Visit Website →</a></p>` : ''}
                     </div>
                 `
             });
