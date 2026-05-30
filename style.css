@@ -487,6 +487,11 @@ section {
     margin: 0 auto 2rem;
 }
 
+.resource-form form button {
+    width: 100%;
+    display: block;
+}
+
 .alternative-text {
     font-size: 1rem;
     margin-bottom: 1.5rem;
@@ -577,6 +582,11 @@ section {
     margin: 0 auto;
 }
 
+.donation-form form button {
+    width: 100%;
+    display: block;
+}
+
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -618,6 +628,15 @@ section {
 .contact-form h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
+}
+
+.contact-form form {
+    max-width: 500px;
+}
+
+.contact-form form button {
+    width: 100%;
+    display: block;
 }
 
 .contact-item {
@@ -765,6 +784,11 @@ section {
 .volunteer-form form {
     max-width: 500px;
     margin: 0 auto;
+}
+
+.volunteer-form form button {
+    width: 100%;
+    display: block;
 }
 
 .volunteer-form select {
