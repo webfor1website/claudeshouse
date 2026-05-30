@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate | Support Claude's House Phoenix</title>
-    <meta name="description" content="Support Claude's House and help provide shelter, meals, and community for Phoenix's homeless and mentally ill population. 100% transparent financials.">
+    <title>Volunteer | Claude's House Phoenix Arizona</title>
+    <meta name="description" content="Volunteer at Claude's House in Phoenix. Help serve meals, run workshops, provide support. No experience required. Just show up.">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,46 +29,40 @@
 
     <section class="page-hero">
         <div class="container">
-            <h1>Donate</h1>
+            <h1>Volunteer</h1>
         </div>
     </section>
 
-    <section class="giving-levels">
+    <section class="volunteer-hero">
         <div class="container">
-            <h2>Choose Your Impact</h2>
-            <div class="giving-grid">
-                <div class="giving-card">
-                    <h3>$25</h3>
-                    <p>Feeds someone for a week</p>
+            <h2>Show up. That's all we ask.</h2>
+        </div>
+    </section>
+
+    <section class="volunteer-roles">
+        <div class="container">
+            <h2>Volunteer Roles</h2>
+            <div class="role-cards">
+                <div class="role-card">
+                    <h3>Kitchen Volunteer</h3>
+                    <p>Help prepare and serve three meals daily. No experience needed. Just a willingness to feed people.</p>
                 </div>
-                <div class="giving-card featured">
-                    <h3>$100</h3>
-                    <p>Covers one night of shelter plus meals</p>
+                <div class="role-card">
+                    <h3>Workshop Facilitator</h3>
+                    <p>Share a skill — job hunting, resume writing, cooking, art, fitness, anything. Weekly one hour sessions.</p>
                 </div>
-                <div class="giving-card">
-                    <h3>$500</h3>
-                    <p>One month of support for one person</p>
+                <div class="role-card">
+                    <h3>Community Support</h3>
+                    <p>Just be present. Talk to people. Play cards. Watch a game. Sometimes the most important thing is just showing up.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="transparency-pledge">
+    <section class="volunteer-form">
         <div class="container">
-            <h2>Our Transparency Pledge</h2>
-            <p>Every dollar accounted for. Published monthly. Always.</p>
-            <p>We publish our full financial statements every single month. You can see exactly where your money goes. No hidden fees. No administrative bloat. Just direct support for people who need it.</p>
-        </div>
-    </section>
-
-    <section class="donation-form">
-        <div class="container">
-            <h2>Make a Donation</h2>
+            <h2>Sign Up to Volunteer</h2>
             <form action="#" method="POST">
-                <div class="form-group">
-                    <label for="amount">Amount</label>
-                    <input type="number" id="amount" name="amount" placeholder="Enter amount" required>
-                </div>
                 <div class="form-group">
                     <label for="name">Your Name</label>
                     <input type="text" id="name" name="name" required>
@@ -78,10 +72,23 @@
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="card">Card Number</label>
-                    <input type="text" id="card" name="card" placeholder="XXXX XXXX XXXX XXXX">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Donate Now</button>
+                <div class="form-group">
+                    <label for="role">Which role interests you?</label>
+                    <select id="role" name="role" required>
+                        <option value="">Select a role</option>
+                        <option value="kitchen">Kitchen Volunteer</option>
+                        <option value="workshop">Workshop Facilitator</option>
+                        <option value="community">Community Support</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="availability">Availability</label>
+                    <textarea id="availability" name="availability" rows="3" placeholder="When are you available to volunteer?"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
     </section>
