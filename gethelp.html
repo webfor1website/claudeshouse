@@ -30,6 +30,7 @@
     <section class="page-hero">
         <div class="container">
             <h1>Get Help</h1>
+            <p class="emergency-211">Call or text 211 for immediate help. Free. Confidential. 24 hours a day.</p>
         </div>
     </section>
 
@@ -78,6 +79,35 @@
                     <p>We won't force you into programs or paperwork. You take it at your pace. We're here when you're ready.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="resource-form">
+        <div class="container">
+            <h2>Get Connected to Resources Right Now</h2>
+            <p>Enter your zip code and we'll connect you instantly to housing, food, showers, and support services available near you. Nothing is required. No judgment. Ever.</p>
+            <form name="resources" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="resources">
+                <div class="form-group">
+                    <label for="firstname">First name</label>
+                    <input type="text" id="firstname" name="firstname" placeholder="First name — optional">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone number — optional">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email — optional">
+                </div>
+                <div class="form-group">
+                    <label for="zipcode">Zip code</label>
+                    <input type="text" id="zipcode" name="zipcode" placeholder="Your zip code">
+                </div>
+                <button type="submit" class="btn btn-primary">Find Resources Near Me</button>
+            </form>
+            <p class="alternative-text">Or search 211 Arizona directly for immediate resources near you:</p>
+            <a href="https://www.211arizona.org" target="_blank" class="btn btn-secondary">Search 211 Arizona Now →</a>
         </div>
     </section>
 

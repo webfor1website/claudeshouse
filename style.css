@@ -282,6 +282,13 @@ section {
     color: var(--text-color);
 }
 
+.emergency-211 {
+    font-size: 1.5rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-top: 1.5rem;
+}
+
 /* Founder */
 .founder {
     background-color: var(--white);
@@ -455,6 +462,35 @@ section {
 .expect-item p {
     font-size: 1rem;
     line-height: 1.6;
+}
+
+/* Resource Form */
+.resource-form {
+    background-color: var(--secondary);
+    text-align: center;
+}
+
+.resource-form h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.resource-form > .container > p {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
+}
+
+.resource-form form {
+    max-width: 500px;
+    margin: 0 auto 2rem;
+}
+
+.alternative-text {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
 }
 
 /* Giving Levels */
