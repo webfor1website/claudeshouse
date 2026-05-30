@@ -7,6 +7,21 @@
   status = 200
 
 [[redirects]]
-  from = "/success"
-  to = "/thankyou.html"
+  from = "/contact"
+  to = "/contact-success.html"
+  status = 200
+
+[[redirects]]
+  from = "/volunteer"
+  to = "/volunteer-success.html"
+  status = 200
+
+[[redirects]]
+  from = "/donate"
+  to = "/donate-success.html"
+  status = 200
+
+[[redirects]]
+  from = "/resources"
+  to = "/resources-success.html"
   status = 200
