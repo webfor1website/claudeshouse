@@ -194,6 +194,10 @@
                 <input type="checkbox" id="filter-gym" value="gym" onchange="filterMarkers()">
                 <label for="filter-gym">Gym / Showers</label>
             </div>
+            <div class="filter-item">
+                <input type="checkbox" id="filter-recovery" value="recovery" onchange="filterMarkers()">
+                <label for="filter-recovery">Recovery / AA / NA</label>
+            </div>
         </div>
 
         <div id="map"></div>
@@ -2874,6 +2878,148 @@
                 category: "medical, services",
                 phone: "(602) 506-6900",
                 link: "https://www.azdhs.gov/prevention/azwic"
+            },
+            // AA AND RECOVERY RESOURCES
+            {
+                name: "Salt River AA Intergroup",
+                address: "3215 E Thunderbird Rd Suite B Phoenix AZ 85032",
+                lat: 33.6234,
+                lng: -112.0089,
+                category: "recovery",
+                phone: "(602) 264-1341",
+                link: "https://www.aaphoenix.org",
+                hours: "24 hour helpline"
+            },
+            {
+                name: "East Valley AA Intergroup",
+                address: "1855 E Southern Ave Suite 103 Mesa AZ 85204",
+                lat: 33.3823,
+                lng: -111.8234,
+                category: "recovery",
+                phone: "(480) 827-1905",
+                link: "https://www.aamesaaz.org",
+                hours: "24 hour helpline"
+            },
+            {
+                name: "Agua Fria AA Intergroup",
+                address: "9794 W Peoria Ave Unit 2 Peoria AZ 85345",
+                lat: 33.5812,
+                lng: -112.2312,
+                category: "recovery",
+                phone: "(623) 937-7836",
+                link: "https://www.aawestphoenix.org"
+            },
+            {
+                name: "Oficina Intergrupal Hispana",
+                address: "2401 N 32nd St Suite 9 Phoenix AZ 85008",
+                lat: 33.4634,
+                lng: -112.0023,
+                category: "recovery",
+                phone: "(602) 957-7457"
+            },
+            {
+                name: "North Scottsdale Fellowship Club",
+                address: "10427 N Scottsdale Rd Scottsdale AZ 85254",
+                lat: 33.5923,
+                lng: -111.9234,
+                category: "recovery",
+                phone: "(602) 264-1341",
+                link: "https://www.aaphoenix.org",
+                hours: "Daily 7am to 9:30pm"
+            },
+            {
+                name: "12 and 12 Scottsdale",
+                address: "9205 E Cave Creek Rd Scottsdale AZ 85262",
+                lat: 33.7234,
+                lng: -111.9523,
+                category: "recovery",
+                phone: "(602) 264-1341",
+                link: "https://www.aaphoenix.org"
+            },
+            {
+                name: "Language of the Heart",
+                address: "7405 E McDonald Dr Scottsdale AZ 85250",
+                lat: 33.5167,
+                lng: -111.9145,
+                category: "recovery",
+                phone: "(602) 264-1341",
+                link: "https://www.aaphoenix.org"
+            },
+            {
+                name: "Dr Bobs Nightmare AA",
+                address: "340 E 15th St Tempe AZ 85281",
+                lat: 33.4245,
+                lng: -111.9312,
+                category: "recovery",
+                phone: "(480) 827-1905",
+                link: "https://www.aamesaaz.org",
+                hours: "Thursdays 8pm"
+            },
+            {
+                name: "Sunday Evening Serenity AA",
+                address: "25150 N Pima Rd Scottsdale AZ 85255",
+                lat: 33.6923,
+                lng: -111.8623,
+                category: "recovery",
+                phone: "(602) 264-1341",
+                link: "https://www.aaphoenix.org",
+                hours: "Sundays 7pm"
+            },
+            {
+                name: "Narcotics Anonymous Arizona Helpline",
+                address: "Phoenix Metro",
+                lat: 33.4484,
+                lng: -112.0740,
+                category: "recovery",
+                phone: "(602) 257-7852",
+                link: "https://www.arizona-na.org",
+                hours: "24 hours"
+            },
+            // CHURCH RESOURCES
+            {
+                name: "Scottsdale Congregational United Church of Christ",
+                address: "4425 N Granite Reef Rd Scottsdale AZ 85251",
+                lat: 33.5023,
+                lng: -111.9312,
+                category: "shelter, food, services",
+                phone: "(480) 946-1891",
+                link: "https://www.scottsdaleucc.org",
+                hours: "Monday to Thursday 10am"
+            },
+            {
+                name: "Andre House",
+                address: "314 W Van Buren St Phoenix AZ 85003",
+                lat: 33.4481,
+                lng: -112.0796,
+                category: "food, clothing, services",
+                phone: "(602) 252-9439",
+                link: "https://andrehouse.org"
+            },
+            {
+                name: "New City Church Outreach",
+                address: "1300 N Central Ave Phoenix AZ 85004",
+                lat: 33.4712,
+                lng: -112.0734,
+                category: "food, services",
+                phone: "(602) 254-3270",
+                link: "https://newcitychurch.cc"
+            },
+            {
+                name: "Central United Methodist",
+                address: "1875 N Central Ave Phoenix AZ 85004",
+                lat: 33.4712,
+                lng: -112.0734,
+                category: "food, services",
+                phone: "(602) 258-4523"
+            },
+            {
+                name: "St Vincent de Paul Society",
+                address: "420 W Watkins St Phoenix AZ 85003",
+                lat: 33.4365,
+                lng: -112.0821,
+                category: "shelter, food, clothing",
+                phone: "(602) 261-6886",
+                link: "https://www.stvincentdepaul.net"
             }
         ];
 
@@ -3058,6 +3204,7 @@
             if (category.includes("clothing")) return "#FFFF00";
             if (category.includes("laundry")) return "#FFC0CB";
             if (category.includes("gym")) return "#008080";
+            if (category.includes("recovery")) return "#006400";
             return "#FF0000";
         }
 
