@@ -86,10 +86,23 @@ h1, h2, h3, h4, h5, h6 {
 
 .logo {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--text-color);
+    font-size: 24px;
+    font-weight: 400;
+    color: #C9A96E;
     text-decoration: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo-location {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: #FAFAF8;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 2px;
 }
 
 .hamburger {
@@ -241,6 +254,14 @@ h1, h2, h3, h4, h5, h6 {
     .nav-cta:hover {
         background-color: #B8985E;
         color: #2C2C2C !important;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .logo-location {
+        font-size: 10px;
     }
 
     .crisis-button {
