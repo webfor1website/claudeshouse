@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spanish to English Translator | Claude's House Phoenix</title>
+    <meta name="description" content="Free Spanish to English voice translator for Phoenix homeless services. Type in Spanish and hear it spoken in English. No app required.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <script src="lang-toggle.js"></script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E4MBZ35WN6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-E4MBZ35WN6');
+    </script>
+    <style>
+        .translator-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .translator-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .translator-header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .translator-header p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+        .translator-box {
+            background: #fff;
+            border: 2px solid #C9A96E;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .translator-box textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 1rem;
+            font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            resize: vertical;
+            margin-bottom: 1rem;
+        }
+        .speak-button {
+            width: 100%;
+            padding: 1.2rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            background-color: #C9A96E;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 0.5rem;
+        }
+        .speak-button:hover {
+            background-color: #b8955d;
+        }
+        .speak-button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .speak-button-subtext {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        .result-box {
+            background: #f5f5f5;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            padding: 1rem;
+            min-height: 80px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .quick-phrases {
+            margin: 2rem 0;
+        }
+        .quick-phrases h3 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        .phrase-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+        .phrase-button {
+            padding: 1rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            background-color: #F5E6D3;
+            color: #333;
+            border: 2px solid #C9A96E;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            min-height: 60px;
+        }
+        .phrase-button:hover {
+            background-color: #E8D5C0;
+            transform: translateY(-2px);
+        }
+        .reverse-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #ddd;
+        }
+        .note-box {
+            background: #fff8e7;
+            border-left: 4px solid #C9A96E;
+            padding: 1rem;
+            margin-top: 2rem;
+            border-radius: 4px;
+        }
+        .note-box p {
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+            color: #555;
+        }
+        @media (max-width: 600px) {
+            .translator-header h1 {
+                font-size: 1.5rem;
+            }
+            .phrase-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="crisis-banner">
+        <span data-en="Crisis? Call or text" data-es="¿Crisis? Llame o envíe un mensaje al">Crisis? Call or text</span> <a href="tel:988">988</a> <span data-en="— Free. Confidential. 24 hours." data-es="— Gratis. Confidencial. 24 horas.">— Free. Confidential. 24 hours.</span>
+    </div>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span>Claude's House</span>
+                <span class="logo-location">PHOENIX, ARIZONA</span>
+            </a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links">
+                <a href="about.html" onclick="closeMenu()" data-en="About" data-es="Nosotros">About</a>
+                <a href="services.html" onclick="closeMenu()" data-en="Services" data-es="Servicios">Services</a>
+                <a href="gethelp.html" class="nav-cta" onclick="closeMenu()" data-en="Get Help Now" data-es="Obtener Ayuda Ahora">Get Help Now</a>
+                <a href="resources-map.html" onclick="closeMenu()" data-en="Find Resources On The Map" data-es="Encontrar Recursos en el Mapa">Find Resources On The Map</a>
+                <a href="https://www.211arizona.org" target="_blank" onclick="closeMenu()" data-en="Find Resources Near Me" data-es="Encontrar Recursos Cerca">Find Resources Near Me</a>
+                <a href="churches.html" onclick="closeMenu()" data-en="Churches" data-es="Iglesias">Churches</a>
+                <a href="aa-meetings.html" onclick="closeMenu()" data-en="AA / NA" data-es="AA / NA">AA / NA</a>
+                <a href="resources.html" onclick="closeMenu()" data-en="Resources" data-es="Recursos">Resources</a>
+                <a href="heat-relief.html" onclick="closeMenu()" data-en="Heat Relief" data-es="Alivio del Calor">Heat Relief</a>
+                <a href="legal-aid.html" onclick="closeMenu()" data-en="Legal Aid" data-es="Ayuda Legal">Legal Aid</a>
+                <a href="donate.html" onclick="closeMenu()" data-en="Donate" data-es="Donar">Donate</a>
+                <a href="financials.html" onclick="closeMenu()" data-en="Financials" data-es="Finanzas">Financials</a>
+                <a href="volunteer.html" onclick="closeMenu()" data-en="Volunteer" data-es="Voluntariado">Volunteer</a>
+                <a href="blog.html" onclick="closeMenu()" data-en="Updates" data-es="Actualizaciones">Updates</a>
+                <a href="translator.html" onclick="closeMenu()" data-en="Translator" data-es="Traductor">Translator</a>
+                <a href="contact.html" onclick="closeMenu()" data-en="Contact" data-es="Contacto">Contact</a>
+                <button id="lang-toggle" class="lang-toggle" onclick="toggleLanguage()">Español</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1 data-en="Translator" data-es="Traductor">Translator</h1>
+        </div>
+    </section>
+
+    <section class="translator-section">
+        <div class="container">
+            <div class="translator-header">
+                <h1 data-en="Need to communicate with staff?" data-es="¿Necesita comunicarse con el personal?">Need to communicate with staff?</h1>
+                <p data-en="Type what you need in Spanish below. Press the button and your device will speak it in English so staff can understand you." data-es="Escriba lo que necesita en español abajo. Presione el botón y su dispositivo lo dirá en inglés para que el personal pueda entenderle.">Type what you need in Spanish below. Press the button and your device will speak it in English so staff can understand you.</p>
+            </div>
+
+            <div class="translator-box">
+                <textarea id="spanish-input" placeholder="Escriba aquí en español..."></textarea>
+                <button id="speak-english" class="speak-button">🔊 Speak in English</button>
+                <p class="speak-button-subtext" data-en="Hablar en inglés" data-es="Hablar en inglés">Hablar en inglés</p>
+                <div id="english-result" class="result-box"></div>
+            </div>
+
+            <div class="quick-phrases">
+                <h3 data-en="Quick Phrases" data-es="Frases Rápidas">Quick Phrases</h3>
+                
+                <h4 data-en="Basic Needs" data-es="Necesidades Básicas">Basic Needs</h4>
+                <div class="phrase-row">
+                    <button class="phrase-button" onclick="usePhrase('Necesito un lugar para dormir')">Necesito un lugar para dormir</button>
+                    <button class="phrase-button" onclick="usePhrase('Tengo hambre')">Tengo hambre</button>
+                    <button class="phrase-button" onclick="usePhrase('Necesito agua')">Necesito agua</button>
+                    <button class="phrase-button" onclick="usePhrase('Necesito ducharme')">Necesito ducharme</button>
+                </div>
+
+                <h4 data-en="Medical" data-es="Médico">Medical</h4>
+                <div class="phrase-row">
+                    <button class="phrase-button" onclick="usePhrase('Necesito ayuda médica')">Necesito ayuda médica</button>
+                    <button class="phrase-button" onclick="usePhrase('Estoy enfermo')">Estoy enfermo</button>
+                    <button class="phrase-button" onclick="usePhrase('Necesito medicamentos')">Necesito medicamentos</button>
+                    <button class="phrase-button" onclick="usePhrase('Llame a una ambulancia')">Llame a una ambulancia</button>
+                </div>
+
+                <h4 data-en="Crisis" data-es="Crisis">Crisis</h4>
+                <div class="phrase-row">
+                    <button class="phrase-button" onclick="usePhrase('Estoy en peligro')">Estoy en peligro</button>
+                    <button class="phrase-button" onclick="usePhrase('Necesito ayuda ahora')">Necesito ayuda ahora</button>
+                    <button class="phrase-button" onclick="usePhrase('Por favor llame al 911')">Por favor llame al 911</button>
+                    <button class="phrase-button" onclick="usePhrase('Estoy pensando en hacerme daño')">Estoy pensando en hacerme daño</button>
+                </div>
+
+                <h4 data-en="Documentation" data-es="Documentación">Documentation</h4>
+                <div class="phrase-row">
+                    <button class="phrase-button" onclick="usePhrase('No tengo identificación')">No tengo identificación</button>
+                    <button class="phrase-button" onclick="usePhrase('No hablo inglés')">No hablo inglés</button>
+                    <button class="phrase-button" onclick="usePhrase('Necesito un intérprete')">Necesito un intérprete</button>
+                    <button class="phrase-button" onclick="usePhrase('Tengo familia')">Tengo familia</button>
+                </div>
+            </div>
+
+            <div class="reverse-section">
+                <div class="translator-header">
+                    <h1 data-en="Staff: Speak to them in Spanish" data-es="Personal: Hable con ellos en español">Staff: Speak to them in Spanish</h1>
+                </div>
+                <div class="translator-box">
+                    <textarea id="english-input" placeholder="Type in English for staff..."></textarea>
+                    <button id="speak-spanish" class="speak-button">🔊 Speak in Spanish</button>
+                    <div id="spanish-result" class="result-box"></div>
+                </div>
+            </div>
+
+            <div class="note-box">
+                <p data-en="This tool works best with WiFi or mobile data. No account required. Nothing is saved." data-es="Esta herramienta funciona mejor con WiFi o datos móviles. No se requiere cuenta. Nada se guarda.">This tool works best with WiFi or mobile data. No account required. Nothing is saved.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Claude's House &mdash; Phoenix, AZ</p>
+            <p>Founded by Claude A. Thompson</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;" data-en="If you are in crisis call or text" data-es="Si está en crisis llame o envíe un mensaje al">If you are in crisis call or text <a href="tel:988" style="color: #C9A96E; text-decoration: underline;">988</a>. <span data-en="Free. Confidential. 24 hours a day." data-es="Gratis. Confidencial. 24 horas al día.">Free. Confidential. 24 hours a day.</span></p>
+            <div class="footer-links">
+                <a href="contact.html" data-en="Contact Us" data-es="Contáctenos">Contact Us</a>
+                <a href="#">EIN: [PENDING]</a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.remove('active');
+        }
+
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+
+            const backToTop = document.getElementById('back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Spanish to English translation
+        document.getElementById('speak-english').addEventListener('click', async function() {
+            const spanishText = document.getElementById('spanish-input').value.trim();
+            if (!spanishText) {
+                alert('Please enter text to translate');
+                return;
+            }
+
+            this.disabled = true;
+            this.textContent = '⏳ Translating...';
+
+            try {
+                const response = await fetch('https://api.mymemory.translated.net/get?q=' + encodeURIComponent(spanishText) + '&langpair=es|en');
+                const data = await response.json();
+                
+                if (data.responseStatus === 200) {
+                    const translatedText = data.responseData.translatedText;
+                    document.getElementById('english-result').textContent = translatedText;
+                    
+                    // Speak the English translation
+                    const utterance = new SpeechSynthesisUtterance(translatedText);
+                    utterance.lang = 'en-US';
+                    utterance.rate = 0.85;
+                    utterance.volume = 1;
+                    window.speechSynthesis.speak(utterance);
+                } else {
+                    document.getElementById('english-result').textContent = 'Translation error. Please try again.';
+                }
+            } catch (error) {
+                document.getElementById('english-result').textContent = 'Error: ' + error.message;
+            }
+
+            this.disabled = false;
+            this.textContent = '🔊 Speak in English';
+        });
+
+        // English to Spanish translation
+        document.getElementById('speak-spanish').addEventListener('click', async function() {
+            const englishText = document.getElementById('english-input').value.trim();
+            if (!englishText) {
+                alert('Please enter text to translate');
+                return;
+            }
+
+            this.disabled = true;
+            this.textContent = '⏳ Translating...';
+
+            try {
+                const response = await fetch('https://api.mymemory.translated.net/get?q=' + encodeURIComponent(englishText) + '&langpair=en|es');
+                const data = await response.json();
+                
+                if (data.responseStatus === 200) {
+                    const translatedText = data.responseData.translatedText;
+                    document.getElementById('spanish-result').textContent = translatedText;
+                    
+                    // Speak the Spanish translation
+                    const utterance = new SpeechSynthesisUtterance(translatedText);
+                    utterance.lang = 'es-ES';
+                    utterance.rate = 0.85;
+                    utterance.volume = 1;
+                    window.speechSynthesis.speak(utterance);
+                } else {
+                    document.getElementById('spanish-result').textContent = 'Translation error. Please try again.';
+                }
+            } catch (error) {
+                document.getElementById('spanish-result').textContent = 'Error: ' + error.message;
+            }
+
+            this.disabled = false;
+            this.textContent = '🔊 Speak in Spanish';
+        });
+
+        // Quick phrase function
+        function usePhrase(phrase) {
+            document.getElementById('spanish-input').value = phrase;
+            document.getElementById('speak-english').click();
+        }
+    </script>
+</body>
+</html>
