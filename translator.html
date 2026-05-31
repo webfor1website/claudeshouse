@@ -194,7 +194,7 @@
     <section class="translator-section">
         <div class="container">
             <div class="translator-header">
-                <h1 data-en="Need to communicate with staff?" data-es="¿Necesita comunicarse con el personal?">Need to communicate with staff?</h1>
+                <h1 data-en="Spanish to English Translator" data-es="Traductor de Español a Inglés">Spanish to English Translator</h1>
                 <p data-en="Type what you need in Spanish below. Press the button and your device will speak it in English so staff can understand you." data-es="Escriba lo que necesita en español abajo. Presione el botón y su dispositivo lo dirá en inglés para que el personal pueda entenderle.">Type what you need in Spanish below. Press the button and your device will speak it in English so staff can understand you.</p>
             </div>
 
@@ -206,7 +206,7 @@
             </div>
 
             <div class="quick-phrases">
-                <h3 data-en="Quick Phrases" data-es="Frases Rápidas">Quick Phrases</h3>
+                <h3 data-en="Quick Phrases (Spanish)" data-es="Frases Rápidas (Español)">Quick Phrases (Spanish)</h3>
                 
                 <h4 data-en="Basic Needs" data-es="Necesidades Básicas">Basic Needs</h4>
                 <div class="phrase-row">
@@ -243,12 +243,50 @@
 
             <div class="reverse-section">
                 <div class="translator-header">
-                    <h1 data-en="Staff: Speak to them in Spanish" data-es="Personal: Hable con ellos en español">Staff: Speak to them in Spanish</h1>
+                    <h1 data-en="English to Spanish Translator" data-es="Traductor de Inglés a Español">English to Spanish Translator</h1>
+                    <p data-en="Type in English below. Press the button and your device will speak it in Spanish so Spanish speakers can understand you." data-es="Escriba en inglés abajo. Presione el botón y su dispositivo lo dirá en español para que los hispanohablantes puedan entenderle.">Type in English below. Press the button and your device will speak it in Spanish so Spanish speakers can understand you.</p>
                 </div>
                 <div class="translator-box">
-                    <textarea id="english-input" placeholder="Type in English for staff..."></textarea>
+                    <textarea id="english-input" placeholder="Type here in English..."></textarea>
                     <button id="speak-spanish" class="speak-button">🔊 Speak in Spanish</button>
+                    <p class="speak-button-subtext" data-en="Hablar en español" data-es="Hablar en español">Hablar en español</p>
                     <div id="spanish-result" class="result-box"></div>
+                </div>
+
+                <div class="quick-phrases">
+                    <h3 data-en="Quick Phrases (English)" data-es="Frases Rápidas (Inglés)">Quick Phrases (English)</h3>
+                    
+                    <h4 data-en="Basic Needs" data-es="Necesidades Básicas">Basic Needs</h4>
+                    <div class="phrase-row">
+                        <button class="phrase-button" onclick="useEnglishPhrase('I need a place to sleep')">I need a place to sleep</button>
+                        <button class="phrase-button" onclick="useEnglishPhrase('I am hungry')">I am hungry</button>
+                        <button class="phrase-button" onclick="useEnglishPhrase('I need water')">I need water</button>
+                        <button class="phrase-button" onclick="useEnglishPhrase('I need to shower')">I need to shower</button>
+                    </div>
+
+                    <h4 data-en="Medical" data-es="Médico">Medical</h4>
+                    <div class="phrase-row">
+                        <button class="phrase-button" onclick="useEnglishPhrase('I need medical help')">I need medical help</button>
+                        <button class="phrase-button" onclick="useEnglishPhrase('I am sick')">I am sick</button>
+                        <button class="phrase-button" onclick="useEnglishPhrase('I need medication')">I need medication</button>
+                        <button class="phrase-button" onclick="useEnglishPhrase('Call an ambulance')">Call an ambulance</button>
+                    </div>
+
+                    <h4 data-en="Crisis" data-es="Crisis">Crisis</h4>
+                    <div class="phrase-row">
+                        <button class="phrase-button" onclick="useEnglishPhrase('I am in danger')">I am in danger</button>
+                        <button class="phrase-button" onclick="useEnglishPhrase('I need help now')">I need help now</button>
+                        <button class="phrase-button" onclick="useEnglishPhrase('Please call 911')">Please call 911</button>
+                        <button class="phrase-button" onclick="useEnglishPhrase('I am thinking about hurting myself')">I am thinking about hurting myself</button>
+                    </div>
+
+                    <h4 data-en="Documentation" data-es="Documentación">Documentation</h4>
+                    <div class="phrase-row">
+                        <button class="phrase-button" onclick="useEnglishPhrase('I do not have ID')">I do not have ID</button>
+                        <button class="phrase-button" onclick="useEnglishPhrase('I do not speak Spanish')">I do not speak Spanish</button>
+                        <button class="phrase-button" onclick="useEnglishPhrase('I need an interpreter')">I need an interpreter</button>
+                        <button class="phrase-button" onclick="useEnglishPhrase('I have family')">I have family</button>
+                    </div>
                 </div>
             </div>
 
@@ -378,10 +416,16 @@
             this.textContent = '🔊 Speak in Spanish';
         });
 
-        // Quick phrase function
+        // Quick phrase function for Spanish to English
         function usePhrase(phrase) {
             document.getElementById('spanish-input').value = phrase;
             document.getElementById('speak-english').click();
+        }
+
+        // Quick phrase function for English to Spanish
+        function useEnglishPhrase(phrase) {
+            document.getElementById('english-input').value = phrase;
+            document.getElementById('speak-spanish').click();
         }
     </script>
 </body>
