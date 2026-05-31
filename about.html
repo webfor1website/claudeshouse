@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <script src="lang-toggle.js"></script>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-E4MBZ35WN6"></script>
     <script>
@@ -22,7 +23,7 @@
 </head>
 <body>
     <div class="crisis-banner">
-        Crisis? Call or text <a href="tel:988">988</a> — Free. Confidential. 24 hours.
+        <span data-en="Crisis? Call or text" data-es="¿Crisis? Llame o envíe un mensaje al">Crisis? Call or text</span> <a href="tel:988">988</a> <span data-en="— Free. Confidential. 24 hours." data-es="— Gratis. Confidencial. 24 horas.">— Free. Confidential. 24 hours.</span>
     </div>
     <nav class="nav">
         <div class="nav-container">
@@ -36,21 +37,22 @@
                 <span></span>
             </div>
             <div class="nav-links">
-                <a href="about.html" onclick="closeMenu()">About</a>
-                <a href="services.html" onclick="closeMenu()">Services</a>
-                <a href="gethelp.html" class="nav-cta" onclick="closeMenu()">Get Help Now</a>
-                <a href="resources-map.html" onclick="closeMenu()">Find Resources On The Map</a>
-                <a href="https://www.211arizona.org" target="_blank" onclick="closeMenu()">Find Resources Near Me</a>
-                <a href="churches.html" onclick="closeMenu()">Churches</a>
-                <a href="aa-meetings.html" onclick="closeMenu()">AA / NA</a>
-                <a href="resources.html" onclick="closeMenu()">Resources</a>
-                <a href="heat-relief.html" onclick="closeMenu()">Heat Relief</a>
-                <a href="legal-aid.html" onclick="closeMenu()">Legal Aid</a>
-                <a href="donate.html" onclick="closeMenu()">Donate</a>
-                <a href="financials.html" onclick="closeMenu()">Financials</a>
-                <a href="volunteer.html" onclick="closeMenu()">Volunteer</a>
-                <a href="blog.html" onclick="closeMenu()">Updates</a>
-                <a href="contact.html" onclick="closeMenu()">Contact</a>
+                <a href="about.html" onclick="closeMenu()" data-en="About" data-es="Nosotros">About</a>
+                <a href="services.html" onclick="closeMenu()" data-en="Services" data-es="Servicios">Services</a>
+                <a href="gethelp.html" class="nav-cta" onclick="closeMenu()" data-en="Get Help Now" data-es="Obtener Ayuda Ahora">Get Help Now</a>
+                <a href="resources-map.html" onclick="closeMenu()" data-en="Find Resources On The Map" data-es="Encontrar Recursos en el Mapa">Find Resources On The Map</a>
+                <a href="https://www.211arizona.org" target="_blank" onclick="closeMenu()" data-en="Find Resources Near Me" data-es="Encontrar Recursos Cerca">Find Resources Near Me</a>
+                <a href="churches.html" onclick="closeMenu()" data-en="Churches" data-es="Iglesias">Churches</a>
+                <a href="aa-meetings.html" onclick="closeMenu()" data-en="AA / NA" data-es="AA / NA">AA / NA</a>
+                <a href="resources.html" onclick="closeMenu()" data-en="Resources" data-es="Recursos">Resources</a>
+                <a href="heat-relief.html" onclick="closeMenu()" data-en="Heat Relief" data-es="Alivio del Calor">Heat Relief</a>
+                <a href="legal-aid.html" onclick="closeMenu()" data-en="Legal Aid" data-es="Ayuda Legal">Legal Aid</a>
+                <a href="donate.html" onclick="closeMenu()" data-en="Donate" data-es="Donar">Donate</a>
+                <a href="financials.html" onclick="closeMenu()" data-en="Financials" data-es="Finanzas">Financials</a>
+                <a href="volunteer.html" onclick="closeMenu()" data-en="Volunteer" data-es="Voluntariado">Volunteer</a>
+                <a href="blog.html" onclick="closeMenu()" data-en="Updates" data-es="Actualizaciones">Updates</a>
+                <a href="contact.html" onclick="closeMenu()" data-en="Contact" data-es="Contacto">Contact</a>
+                <button id="lang-toggle" class="lang-toggle" onclick="toggleLanguage()">Español</button>
             </div>
         </div>
     </nav>
@@ -66,7 +68,7 @@
             <div class="founder-bio">
                 <h2>Claude A. Thompson</h2>
                 <p>Founder</p>
-                <p>I built Claude's House because I know what it feels like when the noise gets too loud and there's nowhere safe to land. Claude's House is the place I wish had existed. It exists now.</p>
+                <p data-en="I built Claude's House because I know what it feels like when the noise gets too loud and there's nowhere safe to land. Claude's House is the place I wish had existed. It exists now." data-es="Construí Claude's House porque sé lo que se siente cuando el ruido se vuelve demasiado alto y no hay ningún lugar seguro donde aterrizar. Claude's House es el lugar que desearía que hubiera existido. Ahora existe.">I built Claude's House because I know what it feels like when the noise gets too loud and there's nowhere safe to land. Claude's House is the place I wish had existed. It exists now.</p>
             </div>
         </div>
     </section>
@@ -89,9 +91,9 @@
         <div class="container">
             <p>Claude's House &mdash; Phoenix, AZ</p>
             <p>Founded by Claude A. Thompson</p>
-            <p style="margin-top: 1rem; font-size: 0.9rem;">If you are in crisis call or text <a href="tel:988" style="color: #C9A96E; text-decoration: underline;">988</a>. Free. Confidential. 24 hours a day.</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;" data-en="If you are in crisis call or text" data-es="Si está en crisis llame o envíe un mensaje al">If you are in crisis call or text <a href="tel:988" style="color: #C9A96E; text-decoration: underline;">988</a>. <span data-en="Free. Confidential. 24 hours a day." data-es="Gratis. Confidencial. 24 horas al día.">Free. Confidential. 24 hours a day.</span></p>
             <div class="footer-links">
-                <a href="contact.html">Contact Us</a>
+                <a href="contact.html" data-en="Contact Us" data-es="Contáctenos">Contact Us</a>
                 <a href="#">EIN: [PENDING]</a>
             </div>
         </div>
