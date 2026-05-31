@@ -207,6 +207,9 @@ h1, h2, h3, h4, h5, h6 {
     .nav-container {
         padding: 0.5rem;
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
     
     .logo {
@@ -215,11 +218,31 @@ h1, h2, h3, h4, h5, h6 {
     
     .hamburger {
         display: block;
-        position: absolute;
-        top: 0.5rem;
-        right: 0.5rem;
+        position: relative;
+        top: 0;
+        right: 0;
         cursor: pointer;
         z-index: 2001;
+    }
+    
+    .lang-toggle {
+        display: block;
+        position: relative;
+        background-color: transparent;
+        border: 2px solid #C9A96E;
+        color: #C9A96E;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Inter', sans-serif;
+        z-index: 2002;
+    }
+
+    .lang-toggle:hover {
+        background-color: #C9A96E;
+        color: white;
     }
     
     .hamburger span {
