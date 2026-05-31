@@ -62,7 +62,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Navigation */
 .nav {
     position: fixed;
-    top: 45px;
+    top: 55px;
     left: 0;
     right: 0;
     background-color: transparent;
