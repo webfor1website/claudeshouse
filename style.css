@@ -274,6 +274,25 @@ h1, h2, h3, h4, h5, h6 {
         background-color: #B8985E;
         transform: translateY(-2px);
     }
+
+    .seo-content {
+        padding: 2rem 0;
+        background-color: #FAFAF8;
+    }
+
+    .seo-content h3 {
+        font-size: 0.85rem;
+        color: #C9A96E;
+        margin-bottom: 0.5rem;
+        font-weight: 400;
+    }
+
+    .seo-content p {
+        font-size: 0.75rem;
+        color: #B8B8B8;
+        line-height: 1.4;
+        max-width: 800px;
+    }
 }
 
 /* Crisis Buttons Section */
