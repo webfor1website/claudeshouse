@@ -144,6 +144,23 @@ h1, h2, h3, h4, h5, h6 {
     color: white !important;
 }
 
+.lang-toggle {
+    background-color: transparent;
+    border: 2px solid #C9A96E;
+    color: #C9A96E;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.lang-toggle:hover {
+    background-color: #C9A96E;
+    color: white;
+}
+
 /* Mobile Navigation */
 @media (max-width: 1024px) {
     .nav-container {
@@ -254,6 +271,25 @@ h1, h2, h3, h4, h5, h6 {
     .nav-cta:hover {
         background-color: #B8985E;
         color: #2C2C2C !important;
+    }
+
+    .lang-toggle {
+        background-color: transparent;
+        border: 2px solid #C9A96E;
+        color: #C9A96E;
+        padding: 1rem;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Inter', sans-serif;
+        width: 100%;
+        text-align: center;
+    }
+
+    .lang-toggle:hover {
+        background-color: #C9A96E;
+        color: #2C2C2C;
     }
 
     .logo {
