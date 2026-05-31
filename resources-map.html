@@ -221,6 +221,18 @@
                 <input type="checkbox" id="filter-recovery" value="recovery" onchange="filterMarkers()">
                 <label for="filter-recovery">Recovery / AA / NA</label>
             </div>
+            <div class="filter-item">
+                <input type="checkbox" id="filter-veterans" value="veterans" onchange="filterMarkers()">
+                <label for="filter-veterans" style="color: #000080;">Veterans</label>
+            </div>
+            <div class="filter-item">
+                <input type="checkbox" id="filter-lgbtq" value="lgbtq" onchange="filterMarkers()">
+                <label for="filter-lgbtq" style="color: #800080;">LGBTQ</label>
+            </div>
+            <div class="filter-item">
+                <input type="checkbox" id="filter-immigration" value="immigration" onchange="filterMarkers()">
+                <label for="filter-immigration" style="color: #008080;">Immigration</label>
+            </div>
         </div>
 
         <div id="map"></div>
@@ -535,7 +547,8 @@
                 lng: -112.0740,
                 category: "mental health",
                 phone: "(602) 222-9444",
-                hours: "24 hours"
+                hours: "24 hours",
+                notes: "This is the Maricopa County behavioral health crisis line. Available 24 hours. Dispatches mobile crisis teams."
             },
             {
                 name: "EMPACT-SPC",
@@ -3045,6 +3058,193 @@
                 category: "shelter, food, clothing",
                 phone: "(602) 261-6886",
                 link: "https://www.stvincentdepaul.net"
+            },
+            // VETERANS RESOURCES
+            {
+                name: "Phoenix Veterans Village",
+                address: "4227 E McDowell Rd Phoenix AZ 85008",
+                lat: 33.4634,
+                lng: -112.0056,
+                category: "veterans, shelter, services",
+                phone: "(602) 263-8771",
+                link: "https://www.cass.org",
+                notes: "Permanent supportive housing for chronically homeless veterans"
+            },
+            {
+                name: "Southwest Valley Veterans Center",
+                address: "1575 N Dysart Rd Avondale AZ 85323",
+                lat: 33.4334,
+                lng: -112.3489,
+                category: "veterans, services",
+                phone: "(623) 333-2290",
+                link: "https://www.va.gov",
+                notes: "VA outreach and benefits assistance for veterans"
+            },
+            {
+                name: "Soldier On Phoenix",
+                address: "3507 N Central Ave Phoenix AZ 85012",
+                lat: 33.4934,
+                lng: -112.0734,
+                category: "veterans, shelter, services",
+                phone: "(602) 393-0055",
+                link: "https://www.wesoldieron.org",
+                notes: "Housing and supportive services for homeless veterans"
+            },
+            {
+                name: "Arizona Department of Veterans Services",
+                address: "3839 N 3rd St Phoenix AZ 85012",
+                lat: 33.5056,
+                lng: -112.0656,
+                category: "veterans, services",
+                phone: "(602) 255-3373",
+                link: "https://dvs.az.gov",
+                notes: "Benefits assistance, housing referrals, and supportive services for Arizona veterans"
+            },
+            {
+                name: "Volunteers of America Veterans Services",
+                address: "1111 W McDowell Rd Phoenix AZ 85007",
+                lat: 33.4634,
+                lng: -112.0867,
+                category: "veterans, shelter, services",
+                phone: "(602) 954-0188",
+                link: "https://www.voa-az.org",
+                notes: "Transitional housing and case management for homeless veterans"
+            },
+            // LGBTQ RESOURCES
+            {
+                name: "One-n-Ten",
+                address: "1101 N Central Ave Phoenix AZ 85004",
+                lat: 33.4634,
+                lng: -112.0734,
+                category: "lgbtq, shelter, services, mental health",
+                phone: "(602) 271-9428",
+                link: "https://www.one-n-ten.org",
+                notes: "Housing, mental health, and support services for LGBTQ youth ages 14-24. Emergency shelter available."
+            },
+            {
+                name: "Aunt Rita's Foundation",
+                address: "1101 N Central Ave Phoenix AZ 85004",
+                lat: 33.4634,
+                lng: -112.0734,
+                category: "lgbtq, services, mental health",
+                phone: "(602) 265-2437",
+                link: "https://www.auntritas.org",
+                notes: "Support services for LGBTQ individuals including housing assistance and mental health referrals"
+            },
+            {
+                name: "Rainbow Youth Project USA",
+                address: "Phoenix AZ metro",
+                lat: 33.4484,
+                lng: -112.0740,
+                category: "lgbtq, services, mental health",
+                phone: "(800) 631-4998",
+                link: "https://www.ryp.org",
+                notes: "Crisis support and resources for LGBTQ youth. 24 hour helpline."
+            },
+            {
+                name: "Trevor Project Hotline",
+                address: "National",
+                lat: 33.4484,
+                lng: -112.0740,
+                category: "lgbtq, mental health",
+                phone: "(866) 488-7386",
+                link: "https://www.thetrevorproject.org",
+                hours: "24 hours",
+                notes: "Crisis intervention and suicide prevention for LGBTQ youth. Free and confidential."
+            },
+            // IMMIGRATION AND UNDOCUMENTED RESOURCES
+            {
+                name: "Florence Project",
+                address: "2 E Congress St Suite 900 Tucson AZ 85701",
+                lat: 32.2217,
+                lng: -110.9734,
+                category: "immigration, services",
+                phone: "(520) 623-4555",
+                link: "https://florenceproject.org",
+                notes: "Free legal services for immigrants and refugees in Arizona regardless of documentation status"
+            },
+            {
+                name: "Friendly House",
+                address: "802 S 1st Ave Phoenix AZ 85003",
+                lat: 33.4423,
+                lng: -112.0778,
+                category: "immigration, services, food",
+                phone: "(602) 257-1870",
+                link: "https://www.friendlyhouseaz.org",
+                notes: "Social services for immigrants and low income residents. Food, housing assistance, and legal referrals."
+            },
+            {
+                name: "International Rescue Committee Phoenix",
+                address: "4425 N 24th St Suite 600 Phoenix AZ 85016",
+                lat: 33.5067,
+                lng: -112.0289,
+                category: "immigration, services",
+                phone: "(602) 433-2440",
+                link: "https://www.rescue.org/united-states/phoenix-az",
+                notes: "Resettlement services, housing assistance, and legal referrals for refugees and immigrants"
+            },
+            {
+                name: "Chicanos Por La Causa",
+                address: "1112 E Buckeye Rd Phoenix AZ 85034",
+                lat: 33.4312,
+                lng: -112.0534,
+                category: "immigration, services, shelter",
+                phone: "(602) 257-0700",
+                link: "https://www.cplc.org",
+                notes: "Housing assistance, case management, and social services. Spanish speaking staff available."
+            },
+            {
+                name: "Catholic Legal Immigration Network Arizona Diocese",
+                address: "400 E Monroe St Phoenix AZ 85004",
+                lat: 33.4489,
+                lng: -112.0734,
+                category: "immigration, services",
+                phone: "(602) 354-2396",
+                link: "https://www.diocesephoenix.org",
+                notes: "Free and low cost immigration legal services regardless of documentation status"
+            },
+            // DOMESTIC VIOLENCE RESOURCES
+            {
+                name: "AZ Coalition to End Sexual and Domestic Violence",
+                address: "2800 N Central Ave Suite 1570 Phoenix AZ 85004",
+                lat: 33.4812,
+                lng: -112.0734,
+                category: "domestic violence, shelter, services",
+                phone: "(602) 279-2900",
+                link: "https://www.acesdv.org",
+                hotline: "(800) 782-6400",
+                hours: "24 hour hotline",
+                notes: "Statewide hotline connecting survivors to nearest shelter. Confidential. Free. Available in multiple languages."
+            },
+            {
+                name: "Maricopa County Domestic Violence Program",
+                address: "222 N Central Ave Phoenix AZ 85004",
+                lat: 33.4523,
+                lng: -112.0734,
+                category: "domestic violence, services, shelter",
+                phone: "(602) 506-1946",
+                link: "https://www.maricopa.gov",
+                notes: "County coordinated domestic violence shelter and services. Call for intake and placement."
+            },
+            // NATIONAL CRISIS HOTLINES
+            {
+                name: "988 Suicide and Crisis Lifeline",
+                address: "National",
+                lat: 33.4484,
+                lng: -112.0740,
+                category: "mental health",
+                phone: "988",
+                notes: "National suicide and crisis lifeline. Call or text 988. Free. Confidential. 24 hours. Available in Spanish."
+            },
+            {
+                name: "211 Arizona",
+                address: "Phoenix AZ",
+                lat: 33.4484,
+                lng: -112.0740,
+                category: "services",
+                phone: "211",
+                link: "https://www.211arizona.org",
+                notes: "Arizona's most comprehensive resource database. Call or text 211 for resources near you. Available daily 9am to 7pm."
             }
         ];
 
