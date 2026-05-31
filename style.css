@@ -242,6 +242,38 @@ h1, h2, h3, h4, h5, h6 {
         background-color: #B8985E;
         color: #2C2C2C !important;
     }
+
+    .crisis-button {
+        width: 100%;
+        min-height: 60px;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .back-to-top {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: #C9A96E;
+        color: #2C2C2C;
+        border: none;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 9999;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .back-to-top:hover {
+        background-color: #B8985E;
+        transform: translateY(-2px);
+    }
 }
 
 /* Crisis Buttons Section */
