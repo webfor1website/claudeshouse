@@ -36,7 +36,7 @@
                 <span></span>
                 <span></span>
             </div>
-            <button id="lang-toggle" class="lang-toggle" onclick="toggleLanguage()">Español</button>
+            <button id="lang-toggle" class="lang-toggle">Español</button>
             <div class="nav-links">
                 <a href="about.html" onclick="closeMenu()" data-en="About" data-es="Nosotros">About</a>
                 <a href="services.html" onclick="closeMenu()" data-en="Services" data-es="Servicios">Services</a>
@@ -72,19 +72,19 @@
 
     <section class="volunteer-roles">
         <div class="container">
-            <h2>Volunteer Roles</h2>
+            <h2 data-en="Volunteer Roles" data-es="Roles de Voluntario">Volunteer Roles</h2>
             <div class="role-cards">
                 <div class="role-card">
                     <h3 data-en="Kitchen Volunteer" data-es="Voluntario de Cocina">Kitchen Volunteer</h3>
-                    <p>Help prepare and serve three meals daily. No experience needed. Just a willingness to feed people.</p>
+                    <p data-en="Help prepare and serve three meals daily. No experience needed. Just a willingness to feed people." data-es="Ayude a preparar y servir tres comidas diarias. No se necesita experiencia. Solo la voluntad de alimentar a las personas.">Help prepare and serve three meals daily. No experience needed. Just a willingness to feed people.</p>
                 </div>
                 <div class="role-card">
                     <h3 data-en="Workshop Facilitator" data-es="Facilitador de Talleres">Workshop Facilitator</h3>
-                    <p>Share a skill — job hunting, resume writing, cooking, art, fitness, anything. Weekly one hour sessions.</p>
+                    <p data-en="Share a skill — job hunting, resume writing, cooking, art, fitness, anything. Weekly one hour sessions." data-es="Comparta una habilidad — búsqueda de empleo, escritura de currículum, cocina, arte, fitness, cualquier cosa. Sesiones semanales de una hora.">Share a skill — job hunting, resume writing, cooking, art, fitness, anything. Weekly one hour sessions.</p>
                 </div>
                 <div class="role-card">
                     <h3 data-en="Community Support" data-es="Apoyo Comunitario">Community Support</h3>
-                    <p>Just be present. Talk to people. Play cards. Watch a game. Sometimes the most important thing is just showing up.</p>
+                    <p data-en="Just be present. Talk to people. Play cards. Watch a game. Sometimes the most important thing is just showing up." data-es="Solo esté presente. Hable con las personas. Juegue cartas. Mire un juego. A veces lo más importante es simplemente presentarse.">Just be present. Talk to people. Play cards. Watch a game. Sometimes the most important thing is just showing up.</p>
                 </div>
             </div>
         </div>
@@ -92,49 +92,49 @@
 
     <section class="volunteer-form">
         <div class="container">
-            <h2>Sign Up to Volunteer</h2>
+            <h2 data-en="Sign Up to Volunteer" data-es="Inscríbete como Voluntario">Sign Up to Volunteer</h2>
             <form action="https://formsubmit.co/spaceexplorationtechnologiesco@proton.me" method="POST">
                 <input type="hidden" name="_next" value="https://claudeshouse.org/thankyou.html">
                 <input type="hidden" name="_subject" value="New Claude's House Volunteer Sign Up">
                 <input type="hidden" name="_captcha" value="false">
                 <div class="form-group">
-                    <label for="name">Your Name</label>
+                    <label for="name" data-en="Your Name" data-es="Su Nombre">Your Name</label>
                     <input type="text" id="name" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
+                    <label for="email" data-en="Email" data-es="Correo electrónico">Email</label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="phone">Phone</label>
+                    <label for="phone" data-en="Phone" data-es="Teléfono">Phone</label>
                     <input type="tel" id="phone" name="phone" required>
                 </div>
                 <div class="form-group">
-                    <label for="role">Which role interests you?</label>
+                    <label for="role" data-en="Which role interests you?" data-es="¿Qué rol le interesa?">Which role interests you?</label>
                     <select id="role" name="role" required>
-                        <option value="">Select a role</option>
-                        <option value="kitchen">Kitchen Volunteer</option>
-                        <option value="workshop">Workshop Facilitator</option>
-                        <option value="community">Community Support</option>
+                        <option value="" data-en="Select a role" data-es="Seleccione un rol">Select a role</option>
+                        <option value="kitchen" data-en="Kitchen Volunteer" data-es="Voluntario de Cocina">Kitchen Volunteer</option>
+                        <option value="workshop" data-en="Workshop Facilitator" data-es="Facilitador de Talleres">Workshop Facilitator</option>
+                        <option value="community" data-en="Community Support" data-es="Apoyo Comunitario">Community Support</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="availability">Availability</label>
-                    <textarea id="availability" name="availability" rows="3" placeholder="When are you available to volunteer?"></textarea>
+                    <label for="availability" data-en="Availability" data-es="Disponibilidad">Availability</label>
+                    <textarea id="availability" name="availability" rows="3" placeholder="When are you available to volunteer?" data-en-placeholder="When are you available to volunteer?" data-es-placeholder="¿Cuándo está disponible para ser voluntario?"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" data-en="Submit" data-es="Enviar">Submit</button>
             </form>
         </div>
     </section>
 
     <footer class="footer">
         <div class="container">
-            <p>Claude's House &mdash; Phoenix, AZ</p>
-            <p>Founded by Claude A. Thompson</p>
-            <p style="margin-top: 1rem; font-size: 0.9rem;" data-en="If you are in crisis call or text" data-es="Si está en crisis llame o envíe un mensaje al">If you are in crisis call or text <a href="tel:988" style="color: #C9A96E; text-decoration: underline;">988</a>. <span data-en="Free. Confidential. 24 hours a day." data-es="Gratis. Confidencial. 24 horas al día.">Free. Confidential. 24 hours a day.</span></p>
+            <p data-en="Claude's House &mdash; Phoenix, AZ" data-es="Claude's House &mdash; Phoenix, AZ">Claude's House &mdash; Phoenix, AZ</p>
+            <p data-en="Founded by Claude A. Thompson" data-es="Fundado por Claude A. Thompson">Founded by Claude A. Thompson</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;"><span data-en="If you are in crisis call or text" data-es="Si está en crisis llame o envíe un mensaje al">If you are in crisis call or text</span> <a href="tel:988" style="color: #C9A96E; text-decoration: underline;">988</a>. <span data-en="Free. Confidential. 24 hours a day." data-es="Gratis. Confidencial. 24 horas al día.">Free. Confidential. 24 hours a day.</span></p>
             <div class="footer-links">
                 <a href="contact.html" data-en="Contact Us" data-es="Contáctenos">Contact Us</a>
-                <a href="#">EIN: [PENDING]</a>
+                <a href="#" data-en="EIN: [PENDING]" data-es="EIN: [PENDING]">EIN: [PENDING]</a>
             </div>
         </div>
     </footer>

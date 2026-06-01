@@ -35,7 +35,7 @@
                 <span></span>
                 <span></span>
             </div>
-            <button id="lang-toggle" class="lang-toggle" onclick="toggleLanguage()">Español</button>
+            <button id="lang-toggle" class="lang-toggle">Español</button>
             <div class="nav-links">
                 <a href="about.html" onclick="closeMenu()" data-en="About" data-es="Nosotros">About</a>
                 <a href="services.html" onclick="closeMenu()" data-en="Services" data-es="Servicios">Services</a>
@@ -66,44 +66,44 @@
     <section class="content-section">
         <div class="container">
             <div class="content-text">
-                <p>Claude's House is completing our 501c3 nonprofit registration and establishing the legal and financial infrastructure needed to responsibly accept and manage donations.</p>
+                <p data-en="Claude's House is completing our 501c3 nonprofit registration and establishing the legal and financial infrastructure needed to responsibly accept and manage donations." data-es="Claude's House está completando nuestro registro de organización sin fines de lucro 501c3 y estableciendo la infraestructura legal y financiera necesaria para aceptar y administrar donaciones de manera responsable.">Claude's House is completing our 501c3 nonprofit registration and establishing the legal and financial infrastructure needed to responsibly accept and manage donations.</p>
                 <p data-en="We are not yet accepting donations. We want to make sure every dollar you give is handled properly, reported transparently, and used exclusively for the people we serve." data-es="Todavía no aceptamos donaciones. Queremos asegurarnos de que cada dólar que dé se maneje correctamente, se informe de manera transparente y se use exclusivamente para las personas a quienes servimos.">We are not yet accepting donations. We want to make sure every dollar you give is handled properly, reported transparently, and used exclusively for the people we serve.</p>
                 <p data-en="Leave your email below and we will notify you the moment we are ready to receive support." data-es="Deje su correo electrónico a continuación y le notificaremos en el momento en que estemos listos para recibir apoyo.">Leave your email below and we will notify you the moment we are ready to receive support.</p>
             </div>
 
             <form name="donor-waitlist" method="POST" data-netlify="true" action="/thankyou.html" class="contact-form">
                 <div class="form-group">
-                    <label for="email">Email</label>
+                    <label for="email" data-en="Email" data-es="Correo electrónico">Email</label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="name">Name (optional)</label>
+                    <label for="name" data-en="Name (optional)" data-es="Nombre (opcional)">Name (optional)</label>
                     <input type="text" id="name" name="name">
                 </div>
-                <button type="submit" class="btn btn-primary">Notify Me When Ready →</button>
+                <button type="submit" class="btn btn-primary" data-en="Notify Me When Ready →" data-es="Notificarme Cuando Esté Listo →">Notify Me When Ready →</button>
             </form>
 
             <div class="note-box">
-                <p>We expect to be accepting donations within 60 days. No spam. Just one email when we are ready.</p>
+                <p data-en="We expect to be accepting donations within 60 days. No spam. Just one email when we are ready." data-es="Esperamos aceptar donaciones dentro de 60 días. Sin spam. Solo un correo electrónico cuando estemos listos.">We expect to be accepting donations within 60 days. No spam. Just one email when we are ready.</p>
             </div>
         </div>
     </section>
 
     <section class="transparency-pledge">
         <div class="container">
-            <h2>Our Transparency Pledge</h2>
-            <p>Every dollar accounted for. Published monthly. Always.</p>
+            <h2 data-en="Our Transparency Pledge" data-es="Nuestro Compromiso de Transparencia">Our Transparency Pledge</h2>
+            <p data-en="Every dollar accounted for. Published monthly. Always." data-es="Cada dólar contabilizado. Publicado mensualmente. Siempre.">Every dollar accounted for. Published monthly. Always.</p>
         </div>
     </section>
 
     <footer class="footer">
         <div class="container">
-            <p>Claude's House &mdash; Phoenix, AZ</p>
-            <p>Founded by Claude A. Thompson</p>
-            <p style="margin-top: 1rem; font-size: 0.9rem;" data-en="If you are in crisis call or text" data-es="Si está en crisis llame o envíe un mensaje al">If you are in crisis call or text <a href="tel:988" style="color: #C9A96E; text-decoration: underline;">988</a>. <span data-en="Free. Confidential. 24 hours a day." data-es="Gratis. Confidencial. 24 horas al día.">Free. Confidential. 24 hours a day.</span></p>
+            <p data-en="Claude's House &mdash; Phoenix, AZ" data-es="Claude's House &mdash; Phoenix, AZ">Claude's House &mdash; Phoenix, AZ</p>
+            <p data-en="Founded by Claude A. Thompson" data-es="Fundado por Claude A. Thompson">Founded by Claude A. Thompson</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;"><span data-en="If you are in crisis call or text" data-es="Si está en crisis llame o envíe un mensaje al">If you are in crisis call or text</span> <a href="tel:988" style="color: #C9A96E; text-decoration: underline;">988</a>. <span data-en="Free. Confidential. 24 hours a day." data-es="Gratis. Confidencial. 24 horas al día.">Free. Confidential. 24 hours a day.</span></p>
             <div class="footer-links">
                 <a href="contact.html" data-en="Contact Us" data-es="Contáctenos">Contact Us</a>
-                <a href="#">EIN: [PENDING]</a>
+                <a href="#" data-en="EIN: [PENDING]" data-es="EIN: [PENDING]">EIN: [PENDING]</a>
             </div>
         </div>
     </footer>

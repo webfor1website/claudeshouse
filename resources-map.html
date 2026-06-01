@@ -144,7 +144,7 @@
                 <span></span>
                 <span></span>
             </div>
-            <button id="lang-toggle" class="lang-toggle" onclick="toggleLanguage()">Español</button>
+            <button id="lang-toggle" class="lang-toggle">Español</button>
             <div class="nav-links">
                 <a href="about.html" onclick="closeMenu()" data-en="About" data-es="Nosotros">About</a>
                 <a href="services.html" onclick="closeMenu()" data-en="Services" data-es="Servicios">Services</a>
@@ -168,73 +168,73 @@
 
     <section class="page-hero">
         <div class="container">
-            <h1>Find Resources Near You</h1>
-            <p>Search for shelters, food banks, showers, clothing, mental health services and more in Phoenix Arizona.</p>
+            <h1 data-en="Find Resources Near You" data-es="Encontrar Recursos Cerca de Usted">Find Resources Near You</h1>
+            <p data-en="Search for shelters, food banks, showers, clothing, mental health services and more in Phoenix Arizona." data-es="Busque refugios, bancos de alimentos, duchas, ropa, servicios de salud mental y más en Phoenix Arizona.">Search for shelters, food banks, showers, clothing, mental health services and more in Phoenix Arizona.</p>
         </div>
     </section>
 
     <section class="map-container">
         <div class="search-bar">
             <input type="text" id="address-input" placeholder="Enter your address or zip code">
-            <button onclick="searchAddress()">Search</button>
+            <button onclick="searchAddress()" data-en="Search" data-es="Buscar">Search</button>
         </div>
 
         <div class="filters">
             <div class="filter-item">
                 <input type="checkbox" id="filter-shelter" value="shelter" onchange="filterMarkers()">
-                <label for="filter-shelter">Shelter</label>
+                <label for="filter-shelter" data-en="Shelter" data-es="Refugio">Shelter</label>
             </div>
             <div class="filter-item">
                 <input type="checkbox" id="filter-food" value="food" onchange="filterMarkers()">
-                <label for="filter-food">Food Bank</label>
+                <label for="filter-food" data-en="Food Bank" data-es="Banco de Alimentos">Food Bank</label>
             </div>
             <div class="filter-item">
                 <input type="checkbox" id="filter-showers" value="showers" onchange="filterMarkers()">
-                <label for="filter-showers">Showers</label>
+                <label for="filter-showers" data-en="Showers" data-es="Duchas">Showers</label>
             </div>
             <div class="filter-item">
                 <input type="checkbox" id="filter-clothing" value="clothing" onchange="filterMarkers()">
-                <label for="filter-clothing">Clothing</label>
+                <label for="filter-clothing" data-en="Clothing" data-es="Ropa">Clothing</label>
             </div>
             <div class="filter-item">
                 <input type="checkbox" id="filter-mental" value="mental health" onchange="filterMarkers()">
-                <label for="filter-mental">Mental Health</label>
+                <label for="filter-mental" data-en="Mental Health" data-es="Salud Mental">Mental Health</label>
             </div>
             <div class="filter-item">
                 <input type="checkbox" id="filter-medical" value="medical" onchange="filterMarkers()">
-                <label for="filter-medical">Medical</label>
+                <label for="filter-medical" data-en="Medical" data-es="Médico">Medical</label>
             </div>
             <div class="filter-item">
                 <input type="checkbox" id="filter-jobs" value="jobs" onchange="filterMarkers()">
-                <label for="filter-jobs">Job Assistance</label>
+                <label for="filter-jobs" data-en="Job Assistance" data-es="Asistencia de Empleo">Job Assistance</label>
             </div>
             <div class="filter-item">
                 <input type="checkbox" id="filter-phone" value="phone" onchange="filterMarkers()">
-                <label for="filter-phone">Phone / Internet</label>
+                <label for="filter-phone" data-en="Phone / Internet" data-es="Teléfono / Internet">Phone / Internet</label>
             </div>
             <div class="filter-item">
                 <input type="checkbox" id="filter-laundry" value="laundry" onchange="filterMarkers()">
-                <label for="filter-laundry">Laundry</label>
+                <label for="filter-laundry" data-en="Laundry" data-es="Lavandería">Laundry</label>
             </div>
             <div class="filter-item">
                 <input type="checkbox" id="filter-gym" value="gym" onchange="filterMarkers()">
-                <label for="filter-gym">Gym / Showers</label>
+                <label for="filter-gym" data-en="Gym / Showers" data-es="Gimnasio / Duchas">Gym / Showers</label>
             </div>
             <div class="filter-item">
                 <input type="checkbox" id="filter-recovery" value="recovery" onchange="filterMarkers()">
-                <label for="filter-recovery">Recovery / AA / NA</label>
+                <label for="filter-recovery" data-en="Recovery / AA / NA" data-es="Recuperación / AA / NA">Recovery / AA / NA</label>
             </div>
             <div class="filter-item">
                 <input type="checkbox" id="filter-veterans" value="veterans" onchange="filterMarkers()">
-                <label for="filter-veterans" style="color: #000080;">Veterans</label>
+                <label for="filter-veterans" style="color: #000080;" data-en="Veterans" data-es="Veteranos">Veterans</label>
             </div>
             <div class="filter-item">
                 <input type="checkbox" id="filter-lgbtq" value="lgbtq" onchange="filterMarkers()">
-                <label for="filter-lgbtq" style="color: #800080;">LGBTQ</label>
+                <label for="filter-lgbtq" style="color: #800080;" data-en="LGBTQ" data-es="LGBTQ">LGBTQ</label>
             </div>
             <div class="filter-item">
                 <input type="checkbox" id="filter-immigration" value="immigration" onchange="filterMarkers()">
-                <label for="filter-immigration" style="color: #008080;">Immigration</label>
+                <label for="filter-immigration" style="color: #008080;" data-en="Immigration" data-es="Inmigración">Immigration</label>
             </div>
         </div>
 
@@ -243,12 +243,12 @@
 
     <footer class="footer">
         <div class="container">
-            <p>Claude's House &mdash; Phoenix, AZ</p>
-            <p>Founded by Claude A. Thompson</p>
-            <p style="margin-top: 1rem; font-size: 0.9rem;" data-en="If you are in crisis call or text" data-es="Si está en crisis llame o envíe un mensaje al">If you are in crisis call or text <a href="tel:988" style="color: #C9A96E; text-decoration: underline;">988</a>. <span data-en="Free. Confidential. 24 hours a day." data-es="Gratis. Confidencial. 24 horas al día.">Free. Confidential. 24 hours a day.</span></p>
+            <p data-en="Claude's House &mdash; Phoenix, AZ" data-es="Claude's House &mdash; Phoenix, AZ">Claude's House &mdash; Phoenix, AZ</p>
+            <p data-en="Founded by Claude A. Thompson" data-es="Fundado por Claude A. Thompson">Founded by Claude A. Thompson</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;"><span data-en="If you are in crisis call or text" data-es="Si está en crisis llame o envíe un mensaje al">If you are in crisis call or text</span> <a href="tel:988" style="color: #C9A96E; text-decoration: underline;">988</a>. <span data-en="Free. Confidential. 24 hours a day." data-es="Gratis. Confidencial. 24 horas al día.">Free. Confidential. 24 hours a day.</span></p>
             <div class="footer-links">
                 <a href="contact.html" data-en="Contact Us" data-es="Contáctenos">Contact Us</a>
-                <a href="#">EIN: [PENDING]</a>
+                <a href="#" data-en="EIN: [PENDING]" data-es="EIN: [PENDING]">EIN: [PENDING]</a>
             </div>
         </div>
     </footer>

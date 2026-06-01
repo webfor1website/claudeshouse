@@ -180,7 +180,7 @@
                 <a href="blog.html" onclick="closeMenu()" data-en="Updates" data-es="Actualizaciones">Updates</a>
                 <a href="translator.html" onclick="closeMenu()" data-en="Translator" data-es="Traductor">Translator</a>
                 <a href="contact.html" onclick="closeMenu()" data-en="Contact" data-es="Contacto">Contact</a>
-                <button id="lang-toggle" class="lang-toggle" onclick="toggleLanguage()">Español</button>
+                <button id="lang-toggle" class="lang-toggle">Español</button>
             </div>
         </div>
     </nav>
@@ -199,8 +199,8 @@
             </div>
 
             <div class="translator-box">
-                <textarea id="spanish-input" placeholder="Escriba aquí en español..."></textarea>
-                <button id="speak-english" class="speak-button">🔊 Speak in English</button>
+                <textarea id="spanish-input" placeholder="Escriba aquí en español..." data-en-placeholder="Type here in Spanish..." data-es-placeholder="Escriba aquí en español..."></textarea>
+                <button id="speak-english" class="speak-button" data-en="🔊 Speak in English" data-es="🔊 Hablar en inglés">🔊 Speak in English</button>
                 <p class="speak-button-subtext" data-en="Hablar en inglés" data-es="Hablar en inglés">Hablar en inglés</p>
                 <div id="english-result" class="result-box"></div>
             </div>
@@ -247,8 +247,8 @@
                     <p data-en="Type in English below. Press the button and your device will speak it in Spanish so Spanish speakers can understand you." data-es="Escriba en inglés abajo. Presione el botón y su dispositivo lo dirá en español para que los hispanohablantes puedan entenderle.">Type in English below. Press the button and your device will speak it in Spanish so Spanish speakers can understand you.</p>
                 </div>
                 <div class="translator-box">
-                    <textarea id="english-input" placeholder="Type here in English..."></textarea>
-                    <button id="speak-spanish" class="speak-button">🔊 Speak in Spanish</button>
+                    <textarea id="english-input" placeholder="Type here in English..." data-en-placeholder="Type here in English..." data-es-placeholder="Escriba aquí en inglés..."></textarea>
+                    <button id="speak-spanish" class="speak-button" data-en="🔊 Speak in Spanish" data-es="🔊 Hablar en español">🔊 Speak in Spanish</button>
                     <p class="speak-button-subtext" data-en="Hablar en español" data-es="Hablar en español">Hablar en español</p>
                     <div id="spanish-result" class="result-box"></div>
                 </div>
@@ -298,12 +298,12 @@
 
     <footer class="footer">
         <div class="container">
-            <p>Claude's House &mdash; Phoenix, AZ</p>
-            <p>Founded by Claude A. Thompson</p>
-            <p style="margin-top: 1rem; font-size: 0.9rem;" data-en="If you are in crisis call or text" data-es="Si está en crisis llame o envíe un mensaje al">If you are in crisis call or text <a href="tel:988" style="color: #C9A96E; text-decoration: underline;">988</a>. <span data-en="Free. Confidential. 24 hours a day." data-es="Gratis. Confidencial. 24 horas al día.">Free. Confidential. 24 hours a day.</span></p>
+            <p data-en="Claude's House &mdash; Phoenix, AZ" data-es="Claude's House &mdash; Phoenix, AZ">Claude's House &mdash; Phoenix, AZ</p>
+            <p data-en="Founded by Claude A. Thompson" data-es="Fundado por Claude A. Thompson">Founded by Claude A. Thompson</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;"><span data-en="If you are in crisis call or text" data-es="Si está en crisis llame o envíe un mensaje al">If you are in crisis call or text</span> <a href="tel:988" style="color: #C9A96E; text-decoration: underline;">988</a>. <span data-en="Free. Confidential. 24 hours a day." data-es="Gratis. Confidencial. 24 horas al día.">Free. Confidential. 24 hours a day.</span></p>
             <div class="footer-links">
                 <a href="contact.html" data-en="Contact Us" data-es="Contáctenos">Contact Us</a>
-                <a href="#">EIN: [PENDING]</a>
+                <a href="#" data-en="EIN: [PENDING]" data-es="EIN: [PENDING]">EIN: [PENDING]</a>
             </div>
         </div>
     </footer>
