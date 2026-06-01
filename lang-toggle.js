@@ -1,29 +1,29 @@
-function setLanguage(lang) {
+function toggleLang() {
+  var lang = localStorage.getItem('lang') 
+    === 'es' ? 'en' : 'es';
   localStorage.setItem('lang', lang);
-  
-  document.querySelectorAll(
-    '[data-en], [data-es]'
-  ).forEach(el => {
-    if (el.hasAttribute('data-' + lang)) {
-      el.innerHTML = 
-        el.getAttribute('data-' + lang);
-    }
-  });
+  applyLang(lang);
+}
 
-  document.querySelectorAll(
-    '[data-en-placeholder], 
-     [data-es-placeholder]'
-  ).forEach(el => {
-    if (el.hasAttribute(
-      'data-' + lang + '-placeholder'
-    )) {
-      el.placeholder = el.getAttribute(
-        'data-' + lang + '-placeholder'
-      );
+function applyLang(lang) {
+  var elements = document.querySelectorAll(
+    '[data-en][data-es]'
+  );
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].innerHTML = 
+      elements[i].getAttribute('data-' + lang);
+  }
+  var placeholders = document.querySelectorAll(
+    '[data-en-placeholder]'
+  );
+  for (var j = 0; j < placeholders.length; j++) {
+    var attr = 'data-' + lang + '-placeholder';
+    if (placeholders[j].hasAttribute(attr)) {
+      placeholders[j].placeholder = 
+        placeholders[j].getAttribute(attr);
     }
-  });
-
-  const btn = document.getElementById(
+  }
+  var btn = document.getElementById(
     'lang-toggle'
   );
   if (btn) {
@@ -32,34 +32,8 @@ function setLanguage(lang) {
   }
 }
 
-function initLanguage() {
-  const saved = localStorage.getItem('lang') 
+window.onload = function() {
+  var saved = localStorage.getItem('lang') 
     || 'en';
-  setLanguage(saved);
-}
-
-document.addEventListener(
-  'DOMContentLoaded', 
-  initLanguage
-);
-
-document.addEventListener(
-  'DOMContentLoaded', 
-  function() {
-    const btn = document.getElementById(
-      'lang-toggle'
-    );
-    if (btn) {
-      btn.addEventListener('click', 
-        function() {
-          const current = 
-            localStorage.getItem('lang') 
-            || 'en';
-          setLanguage(
-            current === 'es' ? 'en' : 'es'
-          );
-        }
-      );
-    }
-  }
-);
+  applyLang(saved);
+};
