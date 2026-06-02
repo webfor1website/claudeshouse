@@ -120,14 +120,14 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Inter', sans-serif;
     font-size: 0.85rem;
     font-weight: 400;
-    color: var(--text-color);
+    color: #C9A96E;
     text-decoration: none;
     transition: color 0.3s ease;
     white-space: nowrap;
 }
 
 .nav-links a:hover {
-    color: var(--primary);
+    color: #B8985E;
 }
 
 .nav-cta {
