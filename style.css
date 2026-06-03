@@ -62,10 +62,10 @@ h1, h2, h3, h4, h5, h6 {
 /* Navigation */
 .nav {
     position: fixed;
-    top: 65px;
+    top: 40px;
     left: 0;
     right: 0;
-    background-color: transparent;
+    background-color: #FAFAF8;
     z-index: 2001;
     transition: background-color 0.3s ease;
 }
@@ -79,9 +79,10 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 2rem;
+    padding: 2rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    min-height: 100px;
 }
 
 .logo {
