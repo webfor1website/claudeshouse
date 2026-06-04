@@ -200,7 +200,8 @@
             </div>
 
             <div class="translator-box">
-                <textarea id="spanish-input" placeholder="Escriba aquí en español..." data-en-placeholder="Type here in Spanish..." data-es-placeholder="Escriba aquí en español..."></textarea>
+                <textarea id="spanish-input" maxlength="2000" placeholder="Escriba aquí en español..." data-en-placeholder="Type here in Spanish..." data-es-placeholder="Escriba aquí en español..."></textarea>
+                <div id="spanish-counter" style="text-align: right; font-size: 0.85rem; color: #666; margin-bottom: 0.5rem;">0 / 2000 characters</div>
                 <button id="speak-english" class="speak-button" data-en="🔊 Speak in English" data-es="🔊 Hablar en inglés">🔊 Speak in English</button>
                 <p class="speak-button-subtext" data-en="Hablar en inglés" data-es="Hablar en inglés">Hablar en inglés</p>
                 <div id="english-result" class="result-box"></div>
@@ -248,7 +249,8 @@
                     <p data-en="Type in English below. Press the button and your device will speak it in Spanish so Spanish speakers can understand you." data-es="Escriba en inglés abajo. Presione el botón y su dispositivo lo dirá en español para que los hispanohablantes puedan entenderle.">Type in English below. Press the button and your device will speak it in Spanish so Spanish speakers can understand you.</p>
                 </div>
                 <div class="translator-box">
-                    <textarea id="english-input" placeholder="Type here in English..." data-en-placeholder="Type here in English..." data-es-placeholder="Escriba aquí en inglés..."></textarea>
+                    <textarea id="english-input" maxlength="2000" placeholder="Type here in English..." data-en-placeholder="Type here in English..." data-es-placeholder="Escriba aquí en inglés..."></textarea>
+                <div id="english-counter" style="text-align: right; font-size: 0.85rem; color: #666; margin-bottom: 0.5rem;">0 / 2000 characters</div>
                     <button id="speak-spanish" class="speak-button" data-en="🔊 Speak in Spanish" data-es="🔊 Hablar en español">🔊 Speak in Spanish</button>
                     <p class="speak-button-subtext" data-en="Hablar en español" data-es="Hablar en español">Hablar en español</p>
                     <div id="spanish-result" class="result-box"></div>
@@ -345,6 +347,18 @@
             });
         }
 
+        // Character counter for Spanish input
+        document.getElementById('spanish-input').addEventListener('input', function() {
+            const count = this.value.length;
+            document.getElementById('spanish-counter').textContent = count + ' / 2000 characters';
+        });
+
+        // Character counter for English input
+        document.getElementById('english-input').addEventListener('input', function() {
+            const count = this.value.length;
+            document.getElementById('english-counter').textContent = count + ' / 2000 characters';
+        });
+
         // Spanish to English translation
         document.getElementById('speak-english').addEventListener('click', async function() {
             const spanishText = document.getElementById('spanish-input').value.trim();
@@ -367,17 +381,28 @@
                 } else if (spanishText.toLowerCase() === 'necesito medicamentos') {
                     translatedText = 'I need medicine';
                 } else {
-                    const response = await fetch('https://api.mymemory.translated.net/get?q=' + encodeURIComponent(spanishText) + '&langpair=es|en');
-                    const data = await response.json();
-                    
-                    if (data.responseStatus === 200) {
-                        translatedText = data.responseData.translatedText;
-                    } else {
-                        document.getElementById('english-result').textContent = 'Translation error. Please try again.';
-                        this.disabled = false;
-                        this.textContent = '🔊 Speak in English';
-                        return;
+                    // Split text into chunks if over 500 characters
+                    const chunks = [];
+                    const chunkSize = 500;
+                    for (let i = 0; i < spanishText.length; i += chunkSize) {
+                        chunks.push(spanishText.substring(i, i + chunkSize));
                     }
+                    
+                    const translatedChunks = [];
+                    for (const chunk of chunks) {
+                        const response = await fetch('https://api.mymemory.translated.net/get?q=' + encodeURIComponent(chunk) + '&langpair=es|en');
+                        const data = await response.json();
+                        
+                        if (data.responseStatus === 200) {
+                            translatedChunks.push(data.responseData.translatedText);
+                        } else {
+                            document.getElementById('english-result').textContent = 'Translation error. Please try again.';
+                            this.disabled = false;
+                            this.textContent = '🔊 Speak in English';
+                            return;
+                        }
+                    }
+                    translatedText = translatedChunks.join(' ');
                 }
                 
                 document.getElementById('english-result').textContent = translatedText;
@@ -408,22 +433,37 @@
             this.textContent = '⏳ Translating...';
 
             try {
-                const response = await fetch('https://api.mymemory.translated.net/get?q=' + encodeURIComponent(englishText) + '&langpair=en|es');
-                const data = await response.json();
-                
-                if (data.responseStatus === 200) {
-                    const translatedText = data.responseData.translatedText;
-                    document.getElementById('spanish-result').textContent = translatedText;
-                    
-                    // Speak the Spanish translation
-                    const utterance = new SpeechSynthesisUtterance(translatedText);
-                    utterance.lang = 'es-ES';
-                    utterance.rate = 0.85;
-                    utterance.volume = 1;
-                    window.speechSynthesis.speak(utterance);
-                } else {
-                    document.getElementById('spanish-result').textContent = 'Translation error. Please try again.';
+                // Split text into chunks if over 500 characters
+                const chunks = [];
+                const chunkSize = 500;
+                for (let i = 0; i < englishText.length; i += chunkSize) {
+                    chunks.push(englishText.substring(i, i + chunkSize));
                 }
+                
+                const translatedChunks = [];
+                for (const chunk of chunks) {
+                    const response = await fetch('https://api.mymemory.translated.net/get?q=' + encodeURIComponent(chunk) + '&langpair=en|es');
+                    const data = await response.json();
+                    
+                    if (data.responseStatus === 200) {
+                        translatedChunks.push(data.responseData.translatedText);
+                    } else {
+                        document.getElementById('spanish-result').textContent = 'Translation error. Please try again.';
+                        this.disabled = false;
+                        this.textContent = '🔊 Speak in Spanish';
+                        return;
+                    }
+                }
+                const translatedText = translatedChunks.join(' ');
+                
+                document.getElementById('spanish-result').textContent = translatedText;
+                
+                // Speak the Spanish translation
+                const utterance = new SpeechSynthesisUtterance(translatedText);
+                utterance.lang = 'es-ES';
+                utterance.rate = 0.85;
+                utterance.volume = 1;
+                window.speechSynthesis.speak(utterance);
             } catch (error) {
                 document.getElementById('spanish-result').textContent = 'Error: ' + error.message;
             }
